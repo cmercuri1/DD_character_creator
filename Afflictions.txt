@@ -1,0 +1,9 @@
+Paranoid,aff,stuff
+Selfish,aff,stuff
+Irrational,aff,stuff
+Fearful,aff,stuff
+Hopeless,aff,stuff
+Abusive,aff,stuff
+Masochistic,aff,stuff
+Rapturous,aff,stuff
+Refactored,aff,stuff

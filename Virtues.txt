@@ -1,0 +1,5 @@
+Powerful,virt,stuff
+Courageous,virt,stuff
+Stalwart,virt,stuff
+Vigorous,virt,stuff
+Focused,virt,stuff

@@ -1,0 +1,85 @@
+Abomination,Incubating Mutation,1,6,11,2,7
+Abomination,Progressive Mutation,2,7,13,3,7
+Abomination,Aggressive Mutation,3,8,15,4,8
+Abomination,Malignant Mutation,4,10,18,5,8
+Abomination,Damnation's Gift,5,11,20,6,9
+Antiquarian,Makeshift Censer,1,3,5,1,5
+Antiquarian,Pungent Censer,2,4,6,2,5
+Antiquarian,Ordained Censer,3,4,7,3,6
+Antiquarian,Ceremonial Censer,4,5,8,4,6
+Antiquarian,The Sarcophagus,5,5,9,5,7
+Arbalest,Crude Crossbow,1,4,8,7,3
+Arbalest,Reinforced Crossbow,2,5,10,8,3
+Arbalest,Heavy Crossbow,3,6,11,9,4
+Arbalest,Veteran's Crossbow,4,7,13,10,4
+Arbalest,Millicent,5,8,14,11,5
+Bounty Hunter,Abandoned Axe,1,5,10,4,5
+Bounty Hunter,Refurbished Axe,2,6,12,5,5
+Bounty Hunter,Fine Axe,3,7,13,6,6
+Bounty Hunter,Professional's Axe,4,7,15,7,6
+Bounty Hunter,The Widowmaker,5,8,16,8,7
+Crusader,Battered Longsword,1,6,12,4,1
+Crusader,Longsword,2,7,14,5,1
+Crusader,Questing Longsword,3,8,16,6,2
+Crusader,Greatsword,4,9,17,7,2
+Crusader,The Long Crusade,5,10,19,8,3
+Flagellant,Hand-Fashioned Flail,1,3,6,2,6
+Flagellant,Initiate's Flail,2,4,7,3,6
+Flagellant,Suffering Flail,3,4,8,4,8
+Flagellant,Bloodthirsty Flail,4,5,10,5,8
+Flagellant,The Burden,5,5,11,6,9
+Grave Robber,Stolen Pick and Knives,1,4,8,6,8
+Grave Robber,Reliable Pick and Knives,2,5,10,7,8
+Grave Robber,Balanced Pick and Knives,3,6,11,8,9
+Grave Robber,Exceptional Pick and Knives,4,6,13,9,9
+Grave Robber,The Razor's Edge,5,7,14,10,10
+Hellion,Primitive Glaive,1,6,12,4,4
+Hellion,Reinforced Glaive,2,7,14,5,4
+Hellion,Resilient Glaive,3,8,16,6,5
+Hellion,Battle-Tested Glaive,4,9,17,7,5
+Hellion,The Wolf's Tooth,5,10,19,8,6
+Highwayman,Flintlock and Rusty Blade,1,5,10,6,5
+Highwayman,Versatile Pistol and Blade,2,6,12,7,5
+Highwayman,Polished Pistol and Blade,3,7,13,8,6
+Highwayman,Fluted Pistol and Sharpened Edge,4,8,15,9,6
+Highwayman,Thunder and Lightning,5,9,16,10,7
+Houndmaster,Crude Cudgel and Frayed Collar,1,4,7,4,6
+Houndmaster,Sturdy Cudgel and Rope Collar,2,5,8,5,6
+Houndmaster,Fine Cudgel and Leather Collar,3,6,10,6,7
+Houndmaster,Studded Cudgel and Collar,4,6,11,7,7
+Houndmaster,Lawbringer,5,7,13,8,8
+Jester,Worn Sickle and Untuned Lute,1,4,7,4,7
+Jester,Reclaimed Sickle and Lute,2,5,8,5,7
+Jester,Sharpened Sickle and Restrung Lute,3,6,10,6,8
+Jester,Masterwork Sickle and Fine Lute,4,6,11,7,8
+Jester,Slash and Solo,5,7,13,8,9
+Leper,Rusted Executioner's Sword,1,8,16,2,2
+Leper,Heavy Executioner's Sword,2,9,18,3,2
+Leper,Sharpened Executioner's Blade,3,10,21,4,3
+Leper,Masterful Executioner's Sword,4,12,23,5,3
+Leper,The Broken Blade,5,13,26,6,4
+Man-at-Arms,Footman's Mace,1,5,9,2,3
+Man-at-Arms,Private's Mace,2,6,11,3,3
+Man-at-Arms,Seargent Major's Mace,3,7,12,4,4
+Man-at-Arms,Master Seargent's Mace,4,7,13,5,4
+Man-at-Arms,Bludgeon,5,8,14,6,5
+Occultist,Battered Skull,1,4,7,7,6
+Occultist,Bleached Skull,2,5,8,8,6
+Occultist,Fine Skull,3,6,10,9,7
+Occultist,Scholar's Skull,4,6,11,10,7
+Occultist,The Mentor's Skull,5,7,13,11,8
+Plague Doctor,Crude Sachets,1,4,7,2,7
+Plague Doctor,Crafted Sachets,2,5,8,3,7
+Plague Doctor,Diseased Sachets,3,6,10,4,8
+Plague Doctor,Toxic Grenades,4,6,11,5,8
+Plague Doctor,The Bubonic Herald,5,7,13,6,9
+Shieldbreaker,Crude Spear,1,5,10,7,5
+Shieldbreaker,Sharpened Spear,2,6,12,8,6
+Shieldbreaker,Sturdy Assegai,3,7,14,9,8
+Shieldbreaker,Deadly Assegai,4,8,16,10,8
+Shieldbreaker,The Adder's Fang,5,9,18,11,9
+Vestal,Rusted Mace,1,4,8,1,4
+Vestal,Steady Mace,2,5,10,2,4
+Vestal,Stalwart Mace,3,6,11,3,5
+Vestal,Gilded Mace,4,6,13,4,5
+Vestal,The Hand of Light,5,7,14,5,6
