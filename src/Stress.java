@@ -130,7 +130,7 @@ public class Stress {
 
 	private void stressCheck() {
 		if ((this.totalStress >= stressThreshold1) && (this.current == null)) {
-			this.totalStress = 100;
+			this.totalStress = stressThreshold1;
 
 			Random rand = new Random();
 
@@ -146,6 +146,7 @@ public class Stress {
 
 	private void heartAttack() {
 		if (this.totalStress >= stressThreshold2) {
+			this.totalStress = stressThreshold2;
 			if (this.current.getType().equals("aff")) {
 				this.stressHeal(40);
 			} else {
@@ -178,6 +179,8 @@ public class Stress {
 		AffVirt c = this.current;
 		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
 				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
+		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
+				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
 		this.current = null;
 	}
 
@@ -185,6 +188,8 @@ public class Stress {
 		AffVirt c = this.current;
 		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
 				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
+		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
+				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
 		this.current = null;
 	}
 
