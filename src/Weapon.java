@@ -42,7 +42,7 @@ public class Weapon {
 	}
 
 	public void display() {
-		System.out.println(name + ":");
+		System.out.println(name);
 	}
 
 }

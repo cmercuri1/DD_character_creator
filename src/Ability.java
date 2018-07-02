@@ -42,7 +42,7 @@ public class Ability {
 	}
 
 	public void setModifier(float modifier) {
-		this.modifier = modifier;
+		this.modifier += modifier;
 	}
 	
 	public void resetModifier() {
@@ -59,5 +59,9 @@ public class Ability {
 
 	public float getHighCap() {
 		return highCap;
-	}	
+	}
+	
+	public void display() {
+		System.out.print(this.name + ": " + this.getFinal());
+	}
 }

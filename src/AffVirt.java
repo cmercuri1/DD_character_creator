@@ -20,7 +20,23 @@ public class AffVirt {
 
 	public AffVirt(String name, String type, float sn, float mv, float bt, float bd, float ds, float df, float db,
 			float tp, float hp, float dg, float da, float sp, float ac, float cr) {
-		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.type = type;
+		
+		this.stunmod = sn;
+		this.moveMod = mv;
+		this.blightMod = bt;
+		this.bleedMod = bd;
+		this.diseaseMod = ds;
+		this.debuffMod = df;
+		this.deathMod = db;
+		this.trapMod = tp;
+		this.hpMod = hp;
+		this.dodgeMod = dg;
+		this.damMod = da;
+		this.speedMod = sp;
+		this.accMod = ac;
+		this.critMod = cr;
 	}
 
 	public String getName() {

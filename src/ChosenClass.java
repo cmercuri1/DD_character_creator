@@ -33,7 +33,7 @@ public class ChosenClass {
 	}
 
 	public void assignClass(PlayerClass pclass) {
-		this.stress = new Stress(pclass.getName(), this);
+		this.stress = new Stress(this);
 		this.chosen = pclass;
 		
 		this.alterAbility("res", "STUN", this.chosen.getResistances().get(0).getValue());
@@ -42,7 +42,7 @@ public class ChosenClass {
 		this.alterAbility("res", "BLIGHT", this.chosen.getResistances().get(3).getValue());
 		this.alterAbility("res", "DISEASE", this.chosen.getResistances().get(4).getValue());
 		this.alterAbility("res", "DEBUFF", this.chosen.getResistances().get(5).getValue());
-		this.alterAbility("res", "DEATHBLOW", this.chosen.getResistances().get(6).getValue());
+		this.alterAbility("res", "DEATH BLOW", this.chosen.getResistances().get(6).getValue());
 		this.alterAbility("res", "TRAP", this.chosen.getResistances().get(7).getValue());
 		
 		this.alterAbility("stat", "TRAP DISARM", this.chosen.getTrapDisarm());
@@ -158,8 +158,8 @@ public class ChosenClass {
 			}
 		}
 		this.alterAbility("stat", "DODGE", this.chosenArmor.getDodge());
-		this.alterAbility("stat", "MAXHP", this.chosenArmor.getHp());
-		this.alterAbility("stat", "MINHP", this.chosenArmor.getHp());
+		this.alterAbility("stat", "MAX HP", this.chosenArmor.getHp());
+		this.alterAbility("stat", "CURR HP", this.chosenArmor.getHp());
 	}
 
 	public void chooseWeapon(int index) {
@@ -169,8 +169,8 @@ public class ChosenClass {
 				break;
 			}
 		}
-		this.alterAbility("stat", "MINDAM", this.chosenWeapon.getMinDam());
-		this.alterAbility("stat", "MAXDAM", this.chosenWeapon.getMaxDam());
+		this.alterAbility("stat", "MIN DAM", this.chosenWeapon.getMinDam());
+		this.alterAbility("stat", "MAX DAM", this.chosenWeapon.getMaxDam());
 		this.alterAbility("stat", "CRIT", this.chosenWeapon.getCrit());
 		this.alterAbility("stat", "SPEED", this.chosenWeapon.getSpeed());
 	}
@@ -182,19 +182,19 @@ public class ChosenClass {
 		this.resistances.add(new Ability("BLEED",0,0,200));
 		this.resistances.add(new Ability("DISEASE",0,0,200));
 		this.resistances.add(new Ability("DEBUFF",0,0,200));
-		this.resistances.add(new Ability("DEATHBLOW",0,0,87));
+		this.resistances.add(new Ability("DEATH BLOW",0,0,87));
 		this.resistances.add(new Ability("TRAP",0,0,200));
 		
 		this.statistics.add(new Ability("DODGE",0,0,150));
-		this.statistics.add(new AbilityMulti("MAXHP",0,0,1000));
-		this.statistics.add(new AbilityMulti("CURRHP",0,0,1000));
-		this.statistics.add(new AbilityMulti("MINDAM",0,0,200));
-		this.statistics.add(new AbilityMulti("MAXDAM",0,0,200));
+		this.statistics.add(new AbilityMulti("MAX HP",0,0,1000));
+		this.statistics.add(new AbilityMulti("CURR HP",0,0,1000));
+		this.statistics.add(new AbilityMulti("MIN DAM",0,0,200));
+		this.statistics.add(new AbilityMulti("MAX DAM",0,0,200));
 		this.statistics.add(new Ability("CRIT",0,0,100));
 		this.statistics.add(new Ability("SPEED",0,0,50));
 		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
-		this.statistics.add(new Ability("STRESSRESIST",100,0,100));
-		this.statistics.add(new Ability("VIRTUECHANCE",25,1,95));
+		this.statistics.add(new Ability("STRESS RESIST",100,0,100));
+		this.statistics.add(new Ability("VIRTUE CHANCE",25,1,95));
 		this.statistics.add(new Ability("ACCURACY",0,0,95));
 		this.statistics.add(new Ability("PROTECTION",0,0,80));
 	}
@@ -223,7 +223,7 @@ public class ChosenClass {
 		this.alterAbilityMod("res", "BLEED", bleed);
 		this.alterAbilityMod("res", "DISEASE", disease);
 		this.alterAbilityMod("res", "DEBUFF", debuff);
-		this.alterAbilityMod("res", "DEATHBlOW", death);
+		this.alterAbilityMod("res", "DEATH BlOW", death);
 		this.alterAbilityMod("res", "TRAP", trap);
 		
 		this.alterAbilityMod("stat", "TRAP DISARM", trap);
@@ -283,7 +283,29 @@ public class ChosenClass {
 	}
 
 	private void displayStats() {
+		for (int i = 0; i < this.statistics.size() / 2; i++) {
+			statistics.get(i).display();
+			System.out.print("   ");
+		}
+		System.out.println();
+		for (int i = this.statistics.size() / 2; i < this.statistics.size(); i++) {
+			statistics.get(i).display();
+			System.out.print("   ");
+		}
+		System.out.println();
 		
+		for (int i = 0; i < this.resistances.size() / 2; i++) {
+			resistances.get(i).display();
+			System.out.print("   ");
+		}
+		System.out.println();
+		for (int i = this.resistances.size() / 2; i < this.resistances.size(); i++) {
+			resistances.get(i).display();
+			System.out.print("   ");
+		}
+		System.out.println();
+
+		this.chosen.display();
 	}
 
 	public PlayerClass getChosen() {

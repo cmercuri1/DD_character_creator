@@ -96,7 +96,7 @@ public class Tester {
 			}
 		}
 		this.choice.display();
-		
+
 		this.stressTest(in);
 
 		in.close();
@@ -175,12 +175,12 @@ public class Tester {
 	private void chooseWeaponsArmor(Scanner in) {
 		boolean canConfirm = false;
 
-		if(this.choice.getItemLevel()>1) {
+		if (this.choice.getItemLevel() > 1) {
 			System.out.println("Enter an Item level number from 1-" + this.choice.getItemLevel() + ", 'q' to quit.");
 		} else {
 			System.out.println("Enter an Item level number equal to 1, 'q' to quit.");
 		}
-		
+
 		String s;
 		while (true) {
 			s = in.next();
@@ -217,24 +217,35 @@ public class Tester {
 		while (true) {
 			System.out.println("Enter a stress increase value.");
 			s = in.next();
-			
+
 			try {
 				int val = Integer.parseInt(s);
-				this.choice.getStress().addStress(val);
-				this.choice.getStress().display();
-			} catch (NumberFormatException ex) {
+				if(val >= 0) {
+					this.choice.getStress().addStress(val);
+				} else {
+					this.choice.getStress().stressHeal(-val);
+				}
 				
+				this.choice.display();
+			} catch (NumberFormatException ex) {
+
 			}
-			
+
 			System.out.println("Are you done testing?");
 			System.out.println("Please enter 'yes' or 'no'");
-			s = in.next();
-			
-			if (!s.equals("yes") && !s.equals("no")) {
-				System.out.println("Please enter 'yes' or 'no'");
-			} else if (s.equals("yes")) {
+			while (true) {
+				s = in.next();
+
+				if (!s.equals("yes") && !s.equals("no")) {
+					System.out.println("Please enter 'yes' or 'no'");
+				} else {
+					break;
+				}
+			}
+			if (s.equals("yes")) {
 				break;
 			}
+
 		}
 	}
 

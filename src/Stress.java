@@ -20,12 +20,12 @@ public class Stress {
 	
 	private ChosenClass chosenClass;
 
-	public Stress(String playClass, ChosenClass cclass) {
+	public Stress(ChosenClass cclass) {
 		this.totalStress = 0;
 		this.current = null;
 		this.chosenClass = cclass;
 		
-		this.setUpAffsVirts(playClass);
+		this.setUpAffsVirts(cclass.getClass().getName());
 	}
 
 	private void setUpAffsVirts(String playClass) {
@@ -126,7 +126,7 @@ public class Stress {
 
 			Random rand = new Random();
 
-			if ((rand.nextInt(100) + 1) > this.chosenClass.getAbility("stat", "VIRTUECHANCE")) {
+			if ((rand.nextInt(100) + 1) > this.chosenClass.getAbility("stat", "VIRTUE CHANCE")) {
 				this.current = this.afflictions.get(rand.nextInt(this.afflictions.size()));
 			} else {
 				this.current = this.virtues.get(rand.nextInt(this.virtues.size()));
@@ -150,7 +150,7 @@ public class Stress {
 	public void stressHeal(int val) {
 		this.totalStress -= val;
 
-		if (this.totalStress < 0) {
+		if (this.totalStress <= 0) {
 			this.totalStress = 0;
 			if (this.current != null && this.current.getType().equals("aff")) {
 				this.removeAffliction();

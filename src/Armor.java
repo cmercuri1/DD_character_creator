@@ -30,7 +30,7 @@ public class Armor {
 	}
 
 	public void display() {
-		System.out.println(name + ":");
+		System.out.println(name);
 	}
 
 }

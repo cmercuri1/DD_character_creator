@@ -116,19 +116,6 @@ public class PlayerClass {
 	}
 
 	public void display() {
-		for (int i = 0; i < this.resistances.size() / 2; i++) {
-			resistances.get(i).display();
-			System.out.print("   ");
-		}
-		System.out.println();
-		for (int i = this.resistances.size() / 2; i < this.resistances.size(); i++) {
-			resistances.get(i).display();
-			System.out.print("   ");
-		}
-		System.out.println();
-
-		System.out.println("Trap disarm: " + this.trapDisarm);
-
 		System.out.println("Movement: " + this.fMove + " forward, " + this.bMove + " backward.");
 		System.out.println("Buff Recieved on Crit: " + this.critBuff);
 		System.out.println("Religious: " + this.isReligious);
