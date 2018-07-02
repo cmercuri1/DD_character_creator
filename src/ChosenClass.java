@@ -195,6 +195,8 @@ public class ChosenClass {
 		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
 		this.statistics.add(new Ability("STRESSRESIST",100,0,100));
 		this.statistics.add(new Ability("VIRTUECHANCE",25,1,95));
+		this.statistics.add(new Ability("ACCURACY",0,0,95));
+		this.statistics.add(new Ability("PROTECTION",0,0,80));
 	}
 	
 	private void alterAbility(String array, String cat, float val) {
@@ -227,7 +229,7 @@ public class ChosenClass {
 		this.alterAbilityMod("stat", "TRAP DISARM", trap);
 	}
 	
-	private void alterAbilityMod(String array, String cat, float val) {
+	public void alterAbilityMod(String array, String cat, float val) {
 		if (array.equals("res")) {
 			for(Ability res: this.resistances) {
 				if(res.getName().equals(cat)) {

@@ -53,9 +53,22 @@ public class Stress {
 				linebreak = line.split(",");
 				String name = linebreak[0];
 				String type = linebreak[1];
-				String effect = linebreak[2];
+				float sn = Float.parseFloat(linebreak[2]);
+				float mv = Float.parseFloat(linebreak[2]);
+				float bt = Float.parseFloat(linebreak[3]);
+				float bd = Float.parseFloat(linebreak[4]);
+				float ds = Float.parseFloat(linebreak[5]);
+				float df = Float.parseFloat(linebreak[6]);
+				float db = Float.parseFloat(linebreak[7]);
+				float tp = Float.parseFloat(linebreak[8]);
+				float hp = Float.parseFloat(linebreak[9]);
+				float dg = Float.parseFloat(linebreak[10]);
+				float da = Float.parseFloat(linebreak[11]);
+				float sp = Float.parseFloat(linebreak[12]);
+				float ac = Float.parseFloat(linebreak[13]);
+				float cr = Float.parseFloat(linebreak[14]);
 
-				this.afflictions.add(new AffVirt(name, type, effect));
+				this.afflictions.add(new AffVirt(name, type, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr));
 			}
 		} catch (IOException x) {
 			System.err.format("IOException: %s%n", x);
@@ -78,9 +91,22 @@ public class Stress {
 				linebreak = line.split(",");
 				String name = linebreak[0];
 				String type = linebreak[1];
-				String effect = linebreak[2];
+				float sn = Float.parseFloat(linebreak[2]);
+				float mv = Float.parseFloat(linebreak[2]);
+				float bt = Float.parseFloat(linebreak[3]);
+				float bd = Float.parseFloat(linebreak[4]);
+				float ds = Float.parseFloat(linebreak[5]);
+				float df = Float.parseFloat(linebreak[6]);
+				float db = Float.parseFloat(linebreak[7]);
+				float tp = Float.parseFloat(linebreak[8]);
+				float hp = Float.parseFloat(linebreak[9]);
+				float dg = Float.parseFloat(linebreak[10]);
+				float da = Float.parseFloat(linebreak[11]);
+				float sp = Float.parseFloat(linebreak[12]);
+				float ac = Float.parseFloat(linebreak[13]);
+				float cr = Float.parseFloat(linebreak[14]);
 
-				this.virtues.add(new AffVirt(name, type, effect));
+				this.virtues.add(new AffVirt(name, type, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr));
 			}
 		} catch (IOException x) {
 			System.err.format("IOException: %s%n", x);
@@ -100,12 +126,13 @@ public class Stress {
 
 			Random rand = new Random();
 
-			if ((rand.nextInt(100) + 1) > this.chosenClass.getAbility("stat", "VIRTUE CHANCE")) {
+			if ((rand.nextInt(100) + 1) > this.chosenClass.getAbility("stat", "VIRTUECHANCE")) {
 				this.current = this.afflictions.get(rand.nextInt(this.afflictions.size()));
 			} else {
 				this.current = this.virtues.get(rand.nextInt(this.virtues.size()));
 				this.stressHeal(60);
 			}
+			this.applyAffVirt();
 		}
 	}
 
@@ -131,11 +158,23 @@ public class Stress {
 		}
 	}
 	
+	private void applyAffVirt() {
+		AffVirt c = this.current;
+		this.chosenClass.alterResistances(c.getStunmod(), c.getMoveMod(), c.getBlightMod(),
+				c.getBleedMod(), c.getDiseaseMod(), c.getDebuffMod(), c.getDeathMod(), c.getTrapMod());
+	}
+	
 	private void removeVirtue() {
+		AffVirt c = this.current;
+		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(),
+				-c.getBleedMod(), -c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
 		this.current = null;
 	}
 
 	private void removeAffliction() {
+		AffVirt c = this.current;
+		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(),
+				-c.getBleedMod(), -c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
 		this.current = null;
 	}
 

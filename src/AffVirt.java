@@ -2,12 +2,25 @@
 public class AffVirt {
 	private String name;
 	private String type;
-	private String effects;
+	
+	private float stunmod;
+	private float moveMod;
+	private float blightMod;
+	private float bleedMod;
+	private float diseaseMod;
+	private float debuffMod;
+	private float deathMod;
+	private float trapMod;
+	private float hpMod;
+	private float dodgeMod;
+	private float damMod;
+	private float speedMod;
+	private float accMod;
+	private float critMod;
 
-	public AffVirt(String name, String type, String effects) {
-		this.name = name;
-		this.type = type;
-		this.effects = effects;
+	public AffVirt(String name, String type, float sn, float mv, float bt, float bd, float ds, float df, float db,
+			float tp, float hp, float dg, float da, float sp, float ac, float cr) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getName() {
@@ -18,8 +31,59 @@ public class AffVirt {
 		return type;
 	}
 
-	public String getEffects() {
-		return effects;
+	public float getStunmod() {
+		return stunmod;
 	}
 
+	public float getMoveMod() {
+		return moveMod;
+	}
+
+	public float getBlightMod() {
+		return blightMod;
+	}
+
+	public float getBleedMod() {
+		return bleedMod;
+	}
+
+	public float getDiseaseMod() {
+		return diseaseMod;
+	}
+
+	public float getDebuffMod() {
+		return debuffMod;
+	}
+
+	public float getDeathMod() {
+		return deathMod;
+	}
+
+	public float getTrapMod() {
+		return trapMod;
+	}
+
+	public float getHpMod() {
+		return hpMod;
+	}
+
+	public float getDodgeMod() {
+		return dodgeMod;
+	}
+
+	public float getDamMod() {
+		return damMod;
+	}
+
+	public float getSpeedMod() {
+		return speedMod;
+	}
+
+	public float getAccMod() {
+		return accMod;
+	}
+
+	public float getCritMod() {
+		return critMod;
+	}
 }

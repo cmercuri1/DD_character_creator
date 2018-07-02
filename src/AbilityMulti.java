@@ -1,5 +1,5 @@
 /* Ability class for handling individual aspects of character's abilities,
- *  such as Dmaage, and HP, which are affected by percentage increases */
+ *  such as Damage, and HP, which are affected by percentage increases */
 public class AbilityMulti extends Ability {
 	public AbilityMulti(String name, float val, float lcap, float hcap) {
 		super(name, val, lcap, hcap);
