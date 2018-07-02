@@ -193,7 +193,7 @@ public class ChosenClass {
 		this.statistics.add(new Ability("CRIT",0,0,100));
 		this.statistics.add(new Ability("SPEED",0,0,50));
 		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
-		this.statistics.add(new Ability("STRESS RESIST",100,0,100));
+		this.statistics.add(new Ability("STRESS RESIST",100,0,200));
 		this.statistics.add(new Ability("VIRTUE CHANCE",25,1,95));
 		this.statistics.add(new Ability("ACCURACY",0,0,95));
 		this.statistics.add(new Ability("PROTECTION",0,0,80));
@@ -215,6 +215,20 @@ public class ChosenClass {
 		}
 	}
 	
+	public void alterStatistics(float dam, float crit, float speed, float dodge, float hp, float acc,
+			float prot, float stress) {
+		this.alterAbilityMod("stat", "MIN DAM", dam);
+		this.alterAbilityMod("stat", "MAX DAM", dam);
+		this.alterAbilityMod("stat", "CRIT", crit);
+		this.alterAbilityMod("stat", "SPEED", speed);
+		this.alterAbilityMod("stat", "DODGE", dodge);
+		this.alterAbilityMod("stat", "MAX HP", hp);
+		this.alterAbilityMod("stat", "CURR HP", hp);
+		this.alterAbilityMod("stat", "ACCURACY", acc);
+		this.alterAbilityMod("stat", "PROTECTION", prot);
+		this.alterAbilityMod("stat", "STRESS RESIST", stress);
+	}
+	
 	public void alterResistances(float stun, float move, float blight, float bleed,
 			float disease, float debuff, float death, float trap) {
 		this.alterAbilityMod("res", "STUN", stun);
@@ -229,7 +243,7 @@ public class ChosenClass {
 		this.alterAbilityMod("stat", "TRAP DISARM", trap);
 	}
 	
-	public void alterAbilityMod(String array, String cat, float val) {
+	private void alterAbilityMod(String array, String cat, float val) {
 		if (array.equals("res")) {
 			for(Ability res: this.resistances) {
 				if(res.getName().equals(cat)) {

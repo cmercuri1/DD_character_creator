@@ -71,6 +71,8 @@ public class Tester {
 	}
 
 	private void choices() {
+		System.out.println("Welcome to Darkest Dungeon Character Creator/Runner");
+		
 		this.choice = new ChosenClass();
 		Scanner in = new Scanner(System.in);
 

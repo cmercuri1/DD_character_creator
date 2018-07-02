@@ -11,15 +11,18 @@ public class AffVirt {
 	private float debuffMod;
 	private float deathMod;
 	private float trapMod;
+	
 	private float hpMod;
 	private float dodgeMod;
 	private float damMod;
 	private float speedMod;
 	private float accMod;
 	private float critMod;
+	private float protMod;
+	private float stressMod;
 
 	public AffVirt(String name, String type, float sn, float mv, float bt, float bd, float ds, float df, float db,
-			float tp, float hp, float dg, float da, float sp, float ac, float cr) {
+			float tp, float hp, float dg, float da, float sp, float ac, float cr, float pt, float st) {
 		this.name = name;
 		this.type = type;
 		
@@ -31,12 +34,15 @@ public class AffVirt {
 		this.debuffMod = df;
 		this.deathMod = db;
 		this.trapMod = tp;
+		
 		this.hpMod = hp;
 		this.dodgeMod = dg;
 		this.damMod = da;
 		this.speedMod = sp;
 		this.accMod = ac;
 		this.critMod = cr;
+		this.protMod = pt;
+		this.stressMod = st;
 	}
 
 	public String getName() {
@@ -101,5 +107,13 @@ public class AffVirt {
 
 	public float getCritMod() {
 		return critMod;
+	}
+
+	public float getProtMod() {
+		return protMod;
+	}
+
+	public float getStressMod() {
+		return stressMod;
 	}
 }
