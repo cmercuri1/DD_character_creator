@@ -33,7 +33,7 @@ public class ChosenClass {
 	}
 
 	public void assignClass(PlayerClass pclass) {
-		this.stress = new Stress(pclass.getName(), 25, this);
+		this.stress = new Stress(pclass.getName(), this);
 		this.chosen = pclass;
 		
 		this.alterAbility("res", "STUN", this.chosen.getResistances().get(0).getValue());
@@ -157,9 +157,9 @@ public class ChosenClass {
 				break;
 			}
 		}
-		this.alterAbility("res", "DODGE", this.chosenArmor.getDodge());
-		this.alterAbility("res", "MAXHP", this.chosenArmor.getHp());
-		this.alterAbility("res", "MINHP", this.chosenArmor.getHp());
+		this.alterAbility("stat", "DODGE", this.chosenArmor.getDodge());
+		this.alterAbility("stat", "MAXHP", this.chosenArmor.getHp());
+		this.alterAbility("stat", "MINHP", this.chosenArmor.getHp());
 	}
 
 	public void chooseWeapon(int index) {
@@ -169,31 +169,32 @@ public class ChosenClass {
 				break;
 			}
 		}
-		this.alterAbility("res", "MINDAM", this.chosenWeapon.getMinDam());
-		this.alterAbility("res", "MAXDAM", this.chosenWeapon.getMaxDam());
-		this.alterAbility("res", "CRIT", this.chosenWeapon.getCrit());
-		this.alterAbility("res", "SPEED", this.chosenWeapon.getSpeed());
+		this.alterAbility("stat", "MINDAM", this.chosenWeapon.getMinDam());
+		this.alterAbility("stat", "MAXDAM", this.chosenWeapon.getMaxDam());
+		this.alterAbility("stat", "CRIT", this.chosenWeapon.getCrit());
+		this.alterAbility("stat", "SPEED", this.chosenWeapon.getSpeed());
 	}
 	
 	private void setUpArrays() {
-		this.resistances.add(new Ability("STUN",0));
-		this.resistances.add(new Ability("MOVE",0));
-		this.resistances.add(new Ability("BLIGHT",0));
-		this.resistances.add(new Ability("BLEED",0));
-		this.resistances.add(new Ability("DISEASE",0));
-		this.resistances.add(new Ability("DEBUFF",0));
-		this.resistances.add(new Ability("DEATHBLOW",0));
-		this.resistances.add(new Ability("TRAP",0));
+		this.resistances.add(new Ability("STUN",0,0,200));
+		this.resistances.add(new Ability("MOVE",0,0,200));
+		this.resistances.add(new Ability("BLIGHT",0,0,200));
+		this.resistances.add(new Ability("BLEED",0,0,200));
+		this.resistances.add(new Ability("DISEASE",0,0,200));
+		this.resistances.add(new Ability("DEBUFF",0,0,200));
+		this.resistances.add(new Ability("DEATHBLOW",0,0,87));
+		this.resistances.add(new Ability("TRAP",0,0,200));
 		
-		this.statistics.add(new Ability("DODGE",0));
-		this.statistics.add(new AbilityMulti("MAXHP",0));
-		this.statistics.add(new AbilityMulti("CURRHP",0));
-		this.statistics.add(new AbilityMulti("MINDAM",0));
-		this.statistics.add(new AbilityMulti("MAXDAM",0));
-		this.statistics.add(new Ability("CRIT",0));
-		this.statistics.add(new Ability("SPEED",0));
-		this.statistics.add(new Ability("TRAP DISARM",0));
-		this.statistics.add(new AbilityMulti("STRESSRESIST",100));
+		this.statistics.add(new Ability("DODGE",0,0,150));
+		this.statistics.add(new AbilityMulti("MAXHP",0,0,1000));
+		this.statistics.add(new AbilityMulti("CURRHP",0,0,1000));
+		this.statistics.add(new AbilityMulti("MINDAM",0,0,200));
+		this.statistics.add(new AbilityMulti("MAXDAM",0,0,200));
+		this.statistics.add(new Ability("CRIT",0,0,100));
+		this.statistics.add(new Ability("SPEED",0,0,50));
+		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
+		this.statistics.add(new Ability("STRESSRESIST",100,0,100));
+		this.statistics.add(new Ability("VIRTUECHANCE",25,1,95));
 	}
 	
 	private void alterAbility(String array, String cat, float val) {
@@ -212,6 +213,20 @@ public class ChosenClass {
 		}
 	}
 	
+	public void alterResistances(float stun, float move, float blight, float bleed,
+			float disease, float debuff, float death, float trap) {
+		this.alterAbilityMod("res", "STUN", stun);
+		this.alterAbilityMod("res", "MOVE", move);
+		this.alterAbilityMod("res", "BLIGHT", blight);
+		this.alterAbilityMod("res", "BLEED", bleed);
+		this.alterAbilityMod("res", "DISEASE", disease);
+		this.alterAbilityMod("res", "DEBUFF", debuff);
+		this.alterAbilityMod("res", "DEATHBlOW", death);
+		this.alterAbilityMod("res", "TRAP", trap);
+		
+		this.alterAbilityMod("stat", "TRAP DISARM", trap);
+	}
+	
 	private void alterAbilityMod(String array, String cat, float val) {
 		if (array.equals("res")) {
 			for(Ability res: this.resistances) {
@@ -226,6 +241,23 @@ public class ChosenClass {
 				}
 			}
 		}
+	}
+	
+	public float getAbility(String array, String cat) {
+		if (array.equals("res")) {
+			for(Ability res: this.resistances) {
+				if(res.getName().equals(cat)) {
+					return res.getFinal();
+				}
+			}
+		} else if (array.equals("stat")) {
+			for(Ability res: this.statistics) {
+				if(res.getName().equals(cat)) {
+					return res.getFinal();
+				}
+			}
+		}
+		return -1;
 	}
 
 	public void display() {

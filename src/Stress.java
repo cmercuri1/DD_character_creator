@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class Stress {
 	private int totalStress;
-	private int virtueChance;
 
 	private static int stressThreshold1 = 100;
 	private static int stressThreshold2 = 200;
@@ -27,7 +26,6 @@ public class Stress {
 		this.chosenClass = cclass;
 		
 		this.setUpAffsVirts(playClass);
-		this.setVirtue(virtueTotal);
 	}
 
 	private void setUpAffsVirts(String playClass) {
@@ -102,7 +100,7 @@ public class Stress {
 
 			Random rand = new Random();
 
-			if ((rand.nextInt(100) + 1) > this.virtueChance) {
+			if ((rand.nextInt(100) + 1) > this.chosenClass.getAbility("stat", "VIRTUE CHANCE")) {
 				this.current = this.afflictions.get(rand.nextInt(this.afflictions.size()));
 			} else {
 				this.current = this.virtues.get(rand.nextInt(this.virtues.size()));
@@ -139,16 +137,6 @@ public class Stress {
 
 	private void removeAffliction() {
 		this.current = null;
-	}
-
-	public void setVirtue(int virtueTotal) {
-		this.virtueChance = virtueTotal;
-
-		if (this.virtueChance > 95) {
-			this.virtueChance = 95;
-		} else if (this.virtueChance < 1) {
-			this.virtueChance = 1;
-		}
 	}
 
 	public void display() {

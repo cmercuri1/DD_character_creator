@@ -5,15 +5,28 @@ public class Ability {
 	private float baseValue;
 	private float modifier;
 	private final int BASE = 0;
+	
+	private float lowCap;
+	private float highCap;
 
-	public Ability(String name, float val) {
+	public Ability(String name, float val, float lcap, float hcap) {
 		this.name = name;
 		this.baseValue = val;
 		this.modifier = BASE;
+		this.lowCap = lcap;
+		this.highCap = hcap;
 	}
 	
 	public float getFinal() {
-		return baseValue + modifier;
+		float test = baseValue + modifier;
+		
+		if(test < this.lowCap) {
+			test = this.lowCap;
+		} else if (test > this.highCap) {
+			test = this.highCap;
+		}
+		
+		return test;
 	}
 
 	public float getBaseValue() {
@@ -38,5 +51,13 @@ public class Ability {
 
 	public String getName() {
 		return name;
+	}
+
+	public float getLowCap() {
+		return lowCap;
+	}
+
+	public float getHighCap() {
+		return highCap;
 	}	
 }
