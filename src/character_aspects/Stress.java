@@ -8,8 +8,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Random;
 
-import ChosenClass;
-
 public class Stress {
 	private int totalStress;
 

@@ -1,3 +1,4 @@
+package run;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -7,6 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import character_aspects.ChosenClass;
 import setup.PlayerClass;
 
 public class Tester {

@@ -1,3 +1,4 @@
+package character_aspects;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -6,9 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import character_aspects.Ability;
-import character_aspects.AbilityMulti;
-import character_aspects.Stress;
 import setup.Armor;
 import setup.PlayerClass;
 import setup.Weapon;
