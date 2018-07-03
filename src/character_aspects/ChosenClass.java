@@ -200,7 +200,7 @@ public class ChosenClass {
 		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
 		this.statistics.add(new Ability("STRESS RESIST",100,0,200));
 		this.statistics.add(new Ability("VIRTUE CHANCE",25,1,95));
-		this.statistics.add(new Ability("ACCURACY",0,0,95));
+		this.statistics.add(new Ability("ACCURACY",0,0,200));
 		this.statistics.add(new Ability("PROTECTION",0,0,80));
 	}
 	

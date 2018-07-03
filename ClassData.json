@@ -1,0 +1,310 @@
+{
+	"Class Data": {
+		"Abomination": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 60,
+				"BleedResist": 30,
+				"DiseaseResist": 20,
+				"DebuffResist": 20,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 1,
+				"BackwardMove": 2,
+				"CritBuff": "+20% DMG",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Antiquarian": [
+			{
+				"StunResist": 20,
+				"MoveResist": 20,
+				"BlightResist": 20,
+				"BleedResist": 20,
+				"DiseaseResist": 20,
+				"DebuffResist": 20,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+10 Dodge",
+				"Religious": "No",
+				"Provisions": "Skeleton Key"
+			}
+		],
+		"Arbalest": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 30,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 0,
+				"BackwardMove": 2,
+				"CritBuff": "+33% DMG vs Marked",
+				"Religious": "No",
+				"Provisions": "Bandage"
+			}
+		],
+		"Bounty Hunter": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 30,
+				"BleedResist": 30,
+				"DiseaseResist": 20,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 40,
+				"TrapDisarm": 80,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+33% DMG vs Marked",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Crusader": [
+			{
+				"StunResist": 40,
+				"MoveResist": 30,
+				"BlightResist": 30,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 1,
+				"BackwardMove": 1,
+				"CritBuff": "+15% PROT",
+				"Religious": "Yes",
+				"Provisions": "Holy Water"
+			}
+		],
+		"Flagellant": [
+			{
+				"StunResist": 50,
+				"MoveResist": 50,
+				"BlightResist": 30,
+				"BleedResist": 65,
+				"DiseaseResist": 40,
+				"DebuffResist": 30,
+				"DeathBlowResist": 73,
+				"TrapResist": 0,
+				"TrapDisarm": 40,
+				"ForwardMove": 3,
+				"BackwardMove": 1,
+				"CritBuff": "+20% Bleed Skill Chance",
+				"Religious": "Yes",
+				"Provisions": "None"
+			}
+		],
+		"Grave Robber": [
+			{
+				"StunResist": 20,
+				"MoveResist": 20,
+				"BlightResist": 50,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 50,
+				"TrapDisarm": 90,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+10 DODGE",
+				"Religious": "No",
+				"Provisions": "Shovel"
+			}
+		],
+		"Hellion": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 40,
+				"BleedResist": 40,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 20,
+				"TrapDisarm": 60,
+				"ForwardMove": 1,
+				"BackwardMove": 0,
+				"CritBuff": "+33% DMG vs Bleeding",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Highwayman": [
+			{
+				"StunResist": 30,
+				"MoveResist": 30,
+				"BlightResist": 30,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 40,
+				"TrapDisarm": 80,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+2 SPD",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Houndmaster": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 40,
+				"BleedResist": 40,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 40,
+				"TrapDisarm": 80,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+20% Bleed Skill chance",
+				"Religious": "No",
+				"Provisions": "2 Dog Treats"
+			}
+		],
+		"Jester": [
+			{
+				"StunResist": 20,
+				"MoveResist": 20,
+				"BlightResist": 40,
+				"BleedResist": 30,
+				"DiseaseResist": 20,
+				"DebuffResist": 40,
+				"DeathBlowResist": 67,
+				"TrapResist": 30,
+				"TrapDisarm": 70,
+				"ForwardMove": 3,
+				"BackwardMove": 3,
+				"CritBuff": "+40% Stress Healing done",
+				"Religious": "No",
+				"Provisions": "Medicinal Herbs"
+			}
+		],
+		"Leper": [
+			{
+				"StunResist": 60,
+				"MoveResist": 60,
+				"BlightResist": 40,
+				"BleedResist": 10,
+				"DiseaseResist": 20,
+				"DebuffResist": 40,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 1,
+				"BackwardMove": 0,
+				"CritBuff": "+10 ACC",
+				"Religious": "Yes",
+				"Provisions": "Medicinal Herbs"
+			}
+		],
+		"Man-at-Arms": [
+			{
+				"StunResist": 40,
+				"MoveResist": 40,
+				"BlightResist": 30,
+				"BleedResist": 40,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "-33% Stress",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Occultist": [
+			{
+				"StunResist": 20,
+				"MoveResist": 20,
+				"BlightResist": 30,
+				"BleedResist": 40,
+				"DiseaseResist": 40,
+				"DebuffResist": 60,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+25% Healing done",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Plague Doctor": [
+			{
+				"StunResist": 20,
+				"MoveResist": 20,
+				"BlightResist": 60,
+				"BleedResist": 20,
+				"DiseaseResist": 50,
+				"DebuffResist": 50,
+				"DeathBlowResist": 67,
+				"TrapResist": 20,
+				"TrapDisarm": 60,
+				"ForwardMove": 1,
+				"BackwardMove": 1,
+				"CritBuff": "+20% Blight chance",
+				"Religious": "No",
+				"Provisions": "Antivenom"
+			}
+		],
+		"Shieldbreaker": [
+			{
+				"StunResist": 50,
+				"MoveResist": 50,
+				"BlightResist": 20,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 20,
+				"TrapDisarm": 60,
+				"ForwardMove": 2,
+				"BackwardMove": 2,
+				"CritBuff": "+15% PROT",
+				"Religious": "No",
+				"Provisions": "None"
+			}
+		],
+		"Vestal": [
+			{
+				"StunResist": 30,
+				"MoveResist": 30,
+				"BlightResist": 30,
+				"BleedResist": 30,
+				"DiseaseResist": 30,
+				"DebuffResist": 30,
+				"DeathBlowResist": 67,
+				"TrapResist": 10,
+				"TrapDisarm": 50,
+				"ForwardMove": 1,
+				"BackwardMove": 1,
+				"CritBuff": "+25% Healing Done",
+				"Religious": "Yes",
+				"Provisions": "None"
+			}
+		]
+	}
+}

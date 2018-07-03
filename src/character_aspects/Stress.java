@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Random;
 
+/* Stress Class for handling character's stress as well as choosing and implementing any afflictions/virtues */
 public class Stress {
 	private int totalStress;
 

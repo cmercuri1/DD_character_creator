@@ -1,0 +1,1267 @@
+{
+	"Armor Data": {
+		"Abomination": [
+			{
+				"ArmorName": "Rusty Chains",
+				"Level": 1,
+				"HP": 26,
+				"DODGE": 7.5
+			},
+			{
+				"ArmorName": "Iron Chains",
+				"Level": 2,
+				"HP": 31,
+				"DODGE": 12.5
+			},
+			{
+				"ArmorName": "Steel Chains",
+				"Level": 3,
+				"HP": 36,
+				"DODGE": 17.5
+			},
+			{
+				"ArmorName": "Hellforged Chains",
+				"Level": 4,
+				"HP": 41,
+				"DODGE": 22.5
+			},
+			{
+				"ArmorName": "Inhuman Bondage",
+				"Level": 5,
+				"HP": 46,
+				"DODGE": 27.5
+			}
+		],
+		"Antiquarian": [
+			{
+				"ArmorName": "Rucksack & Baubles",
+				"Level": 1,
+				"HP": 17,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Pouches & Curiosities",
+				"Level": 2,
+				"HP": 20,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Sturdy Satchel and Oddities",
+				"Level": 3,
+				"HP": 23,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Expedition Pack & Relics",
+				"Level": 4,
+				"HP": 26,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Timurik's Bottomless Bag",
+				"Level": 5,
+				"HP": 29,
+				"DODGE": 30
+			}
+		],
+		"Arbalest": [
+			{
+				"ArmorName": "Second-Hand Plate",
+				"Level": 1,
+				"HP": 27,
+				"DODGE": 0
+			},
+			{
+				"ArmorName": "Pawned Plate",
+				"Level": 2,
+				"HP": 32,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Reliable Plate",
+				"Level": 3,
+				"HP": 37,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Refined Plate",
+				"Level": 4,
+				"HP": 42,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Survivor",
+				"Level": 5,
+				"HP": 47,
+				"DODGE": 20
+			}
+		],
+		"Bounty Hunter": [
+			{
+				"ArmorName": "Rigid Leathers",
+				"Level": 1,
+				"HP": 25,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Buckled Leathers",
+				"Level": 2,
+				"HP": 30,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Reinforced Leathers",
+				"Level": 3,
+				"HP": 35,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Scale and Leathers",
+				"Level": 4,
+				"HP": 40,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Death's Head",
+				"Level": 5,
+				"HP": 45,
+				"DODGE": 25
+			}
+		],
+		"Crusader": [
+			{
+				"ArmorName": "Rusty Hauberk",
+				"Level": 1,
+				"HP": 33,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Chainmail",
+				"Level": 2,
+				"HP": 40,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Chain and Plate",
+				"Level": 3,
+				"HP": 47,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Plate",
+				"Level": 4,
+				"HP": 54,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Zealous Conviction",
+				"Level": 5,
+				"HP": 61,
+				"DODGE": 25
+			}
+		],
+		"Flagellant": [
+			{
+				"ArmorName": "Sinner's Flesh",
+				"Level": 1,
+				"HP": 22,
+				"DODGE": 0
+			},
+			{
+				"ArmorName": "Lacerated Flesh",
+				"Level": 2,
+				"HP": 26,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Scarred Flesh",
+				"Level": 3,
+				"HP": 30,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Martyr's Flesh",
+				"Level": 4,
+				"HP": 34,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "The Testament",
+				"Level": 5,
+				"HP": 38,
+				"DODGE": 20
+			}
+		],
+		"Grave Robber": [
+			{
+				"ArmorName": "Pilfered Jacket",
+				"Level": 1,
+				"HP": 20,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Patched Jacket",
+				"Level": 2,
+				"HP": 24,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Fine Jacket",
+				"Level": 3,
+				"HP": 28,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Formal Jacket",
+				"Level": 4,
+				"HP": 32,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Shadowlace",
+				"Level": 5,
+				"HP": 36,
+				"DODGE": 30
+			}
+		],
+		"Hellion": [
+			{
+				"ArmorName": "Worn Leather, Tattered Furs",
+				"Level": 1,
+				"HP": 26,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Restitched Leather and Furs",
+				"Level": 2,
+				"HP": 31,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Fresh Leather and Furs",
+				"Level": 3,
+				"HP": 36,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Master-Sewn Leather and Furs",
+				"Level": 4,
+				"HP": 41,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Wolf's Pelt",
+				"Level": 5,
+				"HP": 46,
+				"DODGE": 30
+			}
+		],
+		"Highwayman": [
+			{
+				"ArmorName": "Worn Overcoat",
+				"Level": 1,
+				"HP": 23,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Durable Overcoat",
+				"Level": 2,
+				"HP": 28,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Padded Overcoat",
+				"Level": 3,
+				"HP": 33,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Bandit's Overcoat",
+				"Level": 4,
+				"HP": 38,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "The Uncatchable",
+				"Level": 5,
+				"HP": 43,
+				"DODGE": 30
+			}
+		],
+		"Houndmaster": [
+			{
+				"ArmorName": "Ragged Leather Vest",
+				"Level": 1,
+				"HP": 21,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Stitched Leather Vest",
+				"Level": 2,
+				"HP": 25,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Resilient Leather Vest",
+				"Level": 3,
+				"HP": 29,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Splinted Leather Vest",
+				"Level": 4,
+				"HP": 33,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Gendarme's Pride",
+				"Level": 5,
+				"HP": 37,
+				"DODGE": 30
+			}
+		],
+		"Jester": [
+			{
+				"ArmorName": "Motley Garb",
+				"Level": 1,
+				"HP": 19,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Mocking Garb",
+				"Level": 2,
+				"HP": 23,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Padded Garb",
+				"Level": 3,
+				"HP": 27,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Armored Garb",
+				"Level": 4,
+				"HP": 31,
+				"DODGE": 30
+			},
+			{
+				"ArmorName": "The Cruelest Crown",
+				"Level": 5,
+				"HP": 35,
+				"DODGE": 35
+			}
+		],
+		"Leper": [
+			{
+				"ArmorName": "Battered Chestplate",
+				"Level": 1,
+				"HP": 35,
+				"DODGE": 0
+			},
+			{
+				"ArmorName": "Reforged Chestplate",
+				"Level": 2,
+				"HP": 42,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Reinforced Chestplate",
+				"Level": 3,
+				"HP": 49,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Bronzed Chestplate",
+				"Level": 4,
+				"HP": 56,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Indomitable",
+				"Level": 5,
+				"HP": 63,
+				"DODGE": 20
+			}
+		],
+		"Man-at-Arms": [
+			{
+				"ArmorName": "Shoddy Splint",
+				"Level": 1,
+				"HP": 31,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Military-Issue Armor",
+				"Level": 2,
+				"HP": 37,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Sergeant Major's Plate",
+				"Level": 3,
+				"HP": 43,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Master Sergeant's Plate",
+				"Level": 4,
+				"HP": 49,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "The Bulwark",
+				"Level": 5,
+				"HP": 55,
+				"DODGE": 25
+			}
+		],
+		"Occultist": [
+			{
+				"ArmorName": "Tattered Robes",
+				"Level": 1,
+				"HP": 19,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Scholar's Robes",
+				"Level": 2,
+				"HP": 23,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Academic's Robes",
+				"Level": 3,
+				"HP": 27,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "Antiquarian Robes",
+				"Level": 4,
+				"HP": 31,
+				"DODGE": 25
+			},
+			{
+				"ArmorName": "Dark Inquisition",
+				"Level": 5,
+				"HP": 35,
+				"DODGE": 30
+			}
+		],
+		"Plague Doctor": [
+			{
+				"ArmorName": "Attendant's Robes",
+				"Level": 1,
+				"HP": 22,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Intern's Robes",
+				"Level": 2,
+				"HP": 26,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Doctor's Robes",
+				"Level": 3,
+				"HP": 30,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "Surgeon's Robes",
+				"Level": 4,
+				"HP": 34,
+				"DODGE": 20
+			},
+			{
+				"ArmorName": "The Malignant Mantle",
+				"Level": 5,
+				"HP": 38,
+				"DODGE": 25
+			}
+		],
+		"Shieldbreaker": [
+			{
+				"ArmorName": "Tattered Rags",
+				"Level": 1,
+				"HP": 20,
+				"DODGE": 8
+			},
+			{
+				"ArmorName": "Stitched Bedlah",
+				"Level": 2,
+				"HP": 24,
+				"DODGE": 13
+			},
+			{
+				"Class": "Shieldbreaker",
+				"ArmorName": "Fine Bedlah",
+				"Level": 3,
+				"HP": 28,
+				"DODGE": 18
+			},
+			{
+				"ArmorName": "Armored Bedlah",
+				"Level": 4,
+				"HP": 32,
+				"DODGE": 23
+			},
+			{
+				"ArmorName": "Sirocco",
+				"Level": 5,
+				"HP": 36,
+				"DODGE": 28
+			}
+		],
+		"Vestal": [
+			{
+				"ArmorName": "Worn Cloth and Plate",
+				"Level": 1,
+				"HP": 24,
+				"DODGE": 0
+			},
+			{
+				"ArmorName": "Light Cloth and Plate",
+				"Level": 2,
+				"HP": 29,
+				"DODGE": 5
+			},
+			{
+				"ArmorName": "Fine Cloth, Hammered Plate",
+				"Level": 3,
+				"HP": 34,
+				"DODGE": 10
+			},
+			{
+				"ArmorName": "Silk Robes, Hardened Plate",
+				"Level": 4,
+				"HP": 39,
+				"DODGE": 15
+			},
+			{
+				"ArmorName": "The Blessed Bulwark",
+				"Level": 5,
+				"HP": 44,
+				"DODGE": 20
+			}
+		]
+	},
+	"Weapon Data": {
+		"Abomination": [
+			{
+				"Name": "Incubating Mutation",
+				"Level": 1,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 2,
+				"Speed": 7
+			},
+			{
+				"Name": "Progressive Mutation",
+				"Level": 2,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 3,
+				"Speed": 7
+			},
+			{
+				"Name": "Aggressive Mutation",
+				"Level": 3,
+				"MinDamage": 8,
+				"MaxDamage": 15,
+				"Crit": 4,
+				"Speed": 8
+			},
+			{
+				"Name": "Malignant Mutation",
+				"Level": 4,
+				"MinDamage": 10,
+				"MaxDamage": 18,
+				"Crit": 5,
+				"Speed": 8
+			},
+			{
+				"Name": "Damnation's Gift",
+				"Level": 5,
+				"MinDamage": 11,
+				"MaxDamage": 20,
+				"Crit": 6,
+				"Speed": 9
+			}
+		],
+		"Antiquarian": [
+			{
+				"Name": "Makeshift Censer",
+				"Level": 1,
+				"MinDamage": 3,
+				"MaxDamage": 5,
+				"Crit": 1,
+				"Speed": 5
+			},
+			{
+				"Name": "Pungent Censer",
+				"Level": 2,
+				"MinDamage": 4,
+				"MaxDamage": 6,
+				"Crit": 2,
+				"Speed": 5
+			},
+			{
+				"Name": "Ordained Censer",
+				"Level": 3,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 3,
+				"Speed": 6
+			},
+			{
+				"Name": "Ceremonial Censer",
+				"Level": 4,
+				"MinDamage": 5,
+				"MaxDamage": 8,
+				"Crit": 4,
+				"Speed": 6
+			},
+			{
+				"Name": "The Sarcophagus",
+				"Level": 5,
+				"MinDamage": 5,
+				"MaxDamage": 9,
+				"Crit": 5,
+				"Speed": 7
+			}
+		],
+		"Arbalest": [
+			{
+				"Name": "Crude Crossbow",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 8,
+				"Crit": 7,
+				"Speed": 3
+			},
+			{
+				"Name": "Reinforced Crossbow",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 8,
+				"Speed": 3
+			},
+			{
+				"Name": "Heavy Crossbow",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 9,
+				"Speed": 4
+			},
+			{
+				"Name": "Veteran's Crossbow",
+				"Level": 4,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 10,
+				"Speed": 4
+			},
+			{
+				"Name": "Millicent",
+				"Level": 5,
+				"MinDamage": 8,
+				"MaxDamage": 14,
+				"Crit": 11,
+				"Speed": 5
+			}
+		],
+		"Bounty Hunter": [
+			{
+				"Name": "Abandoned Axe",
+				"Level": 1,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 4,
+				"Speed": 5
+			},
+			{
+				"Name": "Refurbished Axe",
+				"Level": 2,
+				"MinDamage": 6,
+				"MaxDamage": 12,
+				"Crit": 5,
+				"Speed": 5
+			},
+			{
+				"Name": "Fine Axe",
+				"Level": 3,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 6,
+				"Speed": 6
+			},
+			{
+				"Name": "Professional's Axe",
+				"Level": 4,
+				"MinDamage": 7,
+				"MaxDamage": 15,
+				"Crit": 7,
+				"Speed": 6
+			},
+			{
+				"Name": "The Widowmaker",
+				"Level": 5,
+				"MinDamage": 8,
+				"MaxDamage": 16,
+				"Crit": 8,
+				"Speed": 7
+			}
+		],
+		"Crusader": [
+			{
+				"Name": "Battered Longsword",
+				"Level": 1,
+				"MinDamage": 6,
+				"MaxDamage": 12,
+				"Crit": 4,
+				"Speed": 1
+			},
+			{
+				"Name": "Longsword",
+				"Level": 2,
+				"MinDamage": 7,
+				"MaxDamage": 14,
+				"Crit": 5,
+				"Speed": 1
+			},
+			{
+				"Name": "Questing Longsword",
+				"Level": 3,
+				"MinDamage": 8,
+				"MaxDamage": 16,
+				"Crit": 6,
+				"Speed": 2
+			},
+			{
+				"Name": "Greatsword",
+				"Level": 4,
+				"MinDamage": 9,
+				"MaxDamage": 17,
+				"Crit": 7,
+				"Speed": 2
+			},
+			{
+				"Name": "The Long Crusade",
+				"Level": 5,
+				"MinDamage": 10,
+				"MaxDamage": 19,
+				"Crit": 8,
+				"Speed": 3
+			}
+		],
+		"Flagellant": [
+			{
+				"Name": "Hand-Fashioned Flail",
+				"Level": 1,
+				"MinDamage": 3,
+				"MaxDamage": 6,
+				"Crit": 2,
+				"Speed": 6
+			},
+			{
+				"Name": "Initiate's Flail",
+				"Level": 2,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 3,
+				"Speed": 6
+			},
+			{
+				"Name": "Suffering Flail",
+				"Level": 3,
+				"MinDamage": 4,
+				"MaxDamage": 8,
+				"Crit": 4,
+				"Speed": 8
+			},
+			{
+				"Name": "Bloodthirsty Flail",
+				"Level": 4,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 5,
+				"Speed": 8
+			},
+			{
+				"Name": "The Burden",
+				"Level": 5,
+				"MinDamage": 5,
+				"MaxDamage": 11,
+				"Crit": 6,
+				"Speed": 9
+			}
+		],
+		"Grave Robber": [
+			{
+				"Name": "Stolen Pick and Knives",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 8,
+				"Crit": 6,
+				"Speed": 8
+			},
+			{
+				"Name": "Reliable Pick and Knives",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 7,
+				"Speed": 8
+			},
+			{
+				"Name": "Balanced Pick and Knives",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 8,
+				"Speed": 9
+			},
+			{
+				"Name": "Exceptional Pick and Knives",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 13,
+				"Crit": 9,
+				"Speed": 9
+			},
+			{
+				"Name": "The Razor's Edge",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 14,
+				"Crit": 10,
+				"Speed": 10
+			}
+		],
+		"Hellion": [
+			{
+				"Name": "Primitive Glaive",
+				"Level": 1,
+				"MinDamage": 6,
+				"MaxDamage": 12,
+				"Crit": 4,
+				"Speed": 4
+			},
+			{
+				"Name": "Reinforced Glaive",
+				"Level": 2,
+				"MinDamage": 7,
+				"MaxDamage": 14,
+				"Crit": 5,
+				"Speed": 4
+			},
+			{
+				"Name": "Resilient Glaive",
+				"Level": 3,
+				"MinDamage": 8,
+				"MaxDamage": 16,
+				"Crit": 6,
+				"Speed": 5
+			},
+			{
+				"Name": "Battle-Tested Glaive",
+				"Level": 4,
+				"MinDamage": 9,
+				"MaxDamage": 17,
+				"Crit": 7,
+				"Speed": 5
+			},
+			{
+				"Name": "The Wolf's Tooth",
+				"Level": 5,
+				"MinDamage": 10,
+				"MaxDamage": 19,
+				"Crit": 8,
+				"Speed": 6
+			}
+		],
+		"Highwayman": [
+			{
+				"Name": "Flintlock, Rusty Blade",
+				"Level": 1,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 6,
+				"Speed": 5
+			},
+			{
+				"Name": "Versatile Pistol and Blade",
+				"Level": 2,
+				"MinDamage": 6,
+				"MaxDamage": 12,
+				"Crit": 7,
+				"Speed": 5
+			},
+			{
+				"Name": "Polished Pistol and Blade",
+				"Level": 3,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 8,
+				"Speed": 6
+			},
+			{
+				"Name": "Fluted Pistol, Sharpened Edge",
+				"Level": 4,
+				"MinDamage": 8,
+				"MaxDamage": 15,
+				"Crit": 9,
+				"Speed": 6
+			},
+			{
+				"Name": "Thunder and Lightning",
+				"Level": 5,
+				"MinDamage": 9,
+				"MaxDamage": 16,
+				"Crit": 10,
+				"Speed": 7
+			}
+		],
+		"Houndmaster": [
+			{
+				"Name": "Crude Cudgel, Frayed Collar",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 4,
+				"Speed": 6
+			},
+			{
+				"Name": "Sturdy Cudgel, Rope Collar",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 8,
+				"Crit": 5,
+				"Speed": 6
+			},
+			{
+				"Name": "Fine Cudgel, Leather Collar",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 10,
+				"Crit": 6,
+				"Speed": 7
+			},
+			{
+				"Name": "Studded Cudgel & Collar",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 7,
+				"Speed": 7
+			},
+			{
+				"Name": "Lawbringer",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 8,
+				"Speed": 8
+			}
+		],
+		"Jester": [
+			{
+				"Name": "Worn Sickle, Untuned Lute",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 4,
+				"Speed": 7
+			},
+			{
+				"Name": "Reclaimed Sickle and Lute",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 8,
+				"Crit": 5,
+				"Speed": 7
+			},
+			{
+				"Name": "Sharpened Sickle, Restrung Lute",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 10,
+				"Crit": 6,
+				"Speed": 8
+			},
+			{
+				"Name": "Masterwork Sickle, Fine Lute",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 7,
+				"Speed": 8
+			},
+			{
+				"Name": "Slash and Solo",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 8,
+				"Speed": 9
+			}
+		],
+		"Leper": [
+			{
+				"Name": "Rusted Executioner's Sword",
+				"Level": 1,
+				"MinDamage": 8,
+				"MaxDamage": 16,
+				"Crit": 2,
+				"Speed": 2
+			},
+			{
+				"Name": "Heavy Executioner's Sword",
+				"Level": 2,
+				"MinDamage": 9,
+				"MaxDamage": 18,
+				"Crit": 3,
+				"Speed": 2
+			},
+			{
+				"Name": "Sharpened Executioner's Blade",
+				"Level": 3,
+				"MinDamage": 10,
+				"MaxDamage": 21,
+				"Crit": 4,
+				"Speed": 3
+			},
+			{
+				"Name": "Masterful Executioner's Sword",
+				"Level": 4,
+				"MinDamage": 12,
+				"MaxDamage": 23,
+				"Crit": 5,
+				"Speed": 3
+			},
+			{
+				"Name": "The Broken Blade",
+				"Level": 5,
+				"MinDamage": 13,
+				"MaxDamage": 26,
+				"Crit": 6,
+				"Speed": 4
+			}
+		],
+		"Man-at-Arms": [
+			{
+				"Name": "Footman's Mace",
+				"Level": 1,
+				"MinDamage": 5,
+				"MaxDamage": 9,
+				"Crit": 2,
+				"Speed": 3
+			},
+			{
+				"Name": "Private's Mace",
+				"Level": 2,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 3,
+				"Speed": 3
+			},
+			{
+				"Name": "Seargent Major's Mace",
+				"Level": 3,
+				"MinDamage": 7,
+				"MaxDamage": 12,
+				"Crit": 4,
+				"Speed": 4
+			},
+			{
+				"Name": "Master Seargent's Mace",
+				"Level": 4,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 5,
+				"Speed": 4
+			},
+			{
+				"Name": "Bludgeon",
+				"Level": 5,
+				"MinDamage": 8,
+				"MaxDamage": 14,
+				"Crit": 6,
+				"Speed": 5
+			}
+		],
+		"Occultist": [
+			{
+				"Name": "Battered Skull",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 7,
+				"Speed": 6
+			},
+			{
+				"Name": "Bleached Skull",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 8,
+				"Crit": 8,
+				"Speed": 6
+			},
+			{
+				"Name": "Fine Skull",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 10,
+				"Crit": 9,
+				"Speed": 7
+			},
+			{
+				"Name": "Scholar's Skull",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 10,
+				"Speed": 7
+			},
+			{
+				"Name": "The Mentor's Skull",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 11,
+				"Speed": 8
+			}
+		],
+		"Plague Doctor": [
+			{
+				"Name": "Crude Sachets",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 7,
+				"Crit": 2,
+				"Speed": 7
+			},
+			{
+				"Name": "Crafted Sachets",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 8,
+				"Crit": 3,
+				"Speed": 7
+			},
+			{
+				"Name": "Diseased Sachets",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 10,
+				"Crit": 4,
+				"Speed": 8
+			},
+			{
+				"Name": "Toxic Grenades",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 5,
+				"Speed": 8
+			},
+			{
+				"Name": "The Bubonic Herald",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 13,
+				"Crit": 6,
+				"Speed": 9
+			}
+		],
+		"Shieldbreaker": [
+			{
+				"Name": "Crude Spear",
+				"Level": 1,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 7,
+				"Speed": 5
+			},
+			{
+				"Name": "Sharpened Spear",
+				"Level": 2,
+				"MinDamage": 6,
+				"MaxDamage": 12,
+				"Crit": 8,
+				"Speed": 6
+			},
+			{
+				"Name": "Sturdy Assegai",
+				"Level": 3,
+				"MinDamage": 7,
+				"MaxDamage": 14,
+				"Crit": 9,
+				"Speed": 8
+			},
+			{
+				"Name": "Deadly Assegai",
+				"Level": 4,
+				"MinDamage": 8,
+				"MaxDamage": 16,
+				"Crit": 10,
+				"Speed": 8
+			},
+			{
+				"Name": "The Adder's Fang",
+				"Level": 5,
+				"MinDamage": 9,
+				"MaxDamage": 18,
+				"Crit": 11,
+				"Speed": 9
+			}
+		],
+		"Vestal": [
+			{
+				"Name": "Rusted Mace",
+				"Level": 1,
+				"MinDamage": 4,
+				"MaxDamage": 8,
+				"Crit": 1,
+				"Speed": 4
+			},
+			{
+				"Name": "Steady Mace",
+				"Level": 2,
+				"MinDamage": 5,
+				"MaxDamage": 10,
+				"Crit": 2,
+				"Speed": 4
+			},
+			{
+				"Name": "Stalwart Mace",
+				"Level": 3,
+				"MinDamage": 6,
+				"MaxDamage": 11,
+				"Crit": 3,
+				"Speed": 5
+			},
+			{
+				"Name": "Gilded Mace",
+				"Level": 4,
+				"MinDamage": 6,
+				"MaxDamage": 13,
+				"Crit": 4,
+				"Speed": 5
+			},
+			{
+				"Name": "The Hand of Light",
+				"Level": 5,
+				"MinDamage": 7,
+				"MaxDamage": 14,
+				"Crit": 5,
+				"Speed": 6
+			}
+		]
+	}
+}
+}
+}

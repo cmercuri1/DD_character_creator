@@ -1,0 +1,32 @@
+{
+	"Titles": [
+		{
+			"Level": 0,
+			"Title": "Seeker"
+		},
+		{
+			"Level": 1,
+			"Title": "Apprentice"
+		},
+		{
+			"Level": 2,
+			"Title": "Adventurer"
+		},
+		{
+			"Level": 3,
+			"Title": "Veteran"
+		},
+		{
+			"Level": 4,
+			"Title": "Master"
+		},
+		{
+			"Level": 5,
+			"Title": "Champion"
+		},
+		{
+			"Level": 6,
+			"Title": "Legend"
+		}
+	]
+}

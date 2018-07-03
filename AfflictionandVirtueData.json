@@ -1,0 +1,174 @@
+{
+	"Afflictions": [
+		{
+			"Others": [
+				{
+					"name": "Paranoid",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": 10,
+					"DAMAGE MOD": -25,
+					"SPEED MOD": -2
+				},
+				{
+					"name": "Selfish",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": 5,
+					"DAMAGE MOD": -10,
+					"ACC MOD": -5
+				},
+				{
+					"name": "Irrational",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": -5,
+					"DAMAGE MOD": -10,
+					"ACC MOD": -5,
+					"SPEED MOD": 2
+				},
+				{
+					"name": "Fearful",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": 10,
+					"DAMAGE MOD": -25,
+					"SPEED MOD": 2
+				},
+				{
+					"name": "Hopeless",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": -5,
+					"ACC MOD": -5,
+					"SPEED MOD": -3
+				},
+				{
+					"name": "Abusive",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": -15,
+					"ACC MOD": -5,
+					"DAMAGE MOD": 25
+				},
+				{
+					"name": "Abusive",
+					"STUN MOD": -15,
+					"MOVE MOD": -15,
+					"BLIGHT MOD": -15,
+					"BLEED MOD": -15,
+					"DISEASE MOD": -15,
+					"DEBUFF MOD": -15,
+					"TRAP MOD": -15,
+					"HP MOD": -10,
+					"DODGE MOD": -15
+				},
+				{
+					"name": "Refactored"
+				}
+			],
+			"Flagellant": [
+				{
+					"name": "Rapturous",
+					"DODGE MOD": -20,
+					"DAMAGE MOD": 25,
+					"SPEED MOD": 3
+				}
+			]
+		}
+	],
+	"Virtues": [
+		{
+			"All": [
+				{
+					"name": "Powerful",
+					"STUN MOD": 25,
+					"MOVE MOD": 25,
+					"BLIGHT MOD": 25,
+					"BLEED MOD": 25,
+					"DISEASE MOD": 25,
+					"DEBUFF MOD": 25,
+					"DAMAGE MOD": 25
+				},
+				{
+					"name": "Courageous",
+					"STUN MOD": 25,
+					"MOVE MOD": 25,
+					"BLIGHT MOD": 25,
+					"BLEED MOD": 25,
+					"DISEASE MOD": 25,
+					"DEBUFF MOD": 25,
+					"STRESS MOD": 20
+				},
+				{
+					"name": "Stalward",
+					"STUN MOD": 25,
+					"MOVE MOD": 25,
+					"BLIGHT MOD": 25,
+					"BLEED MOD": 25,
+					"DISEASE MOD": 25,
+					"DEBUFF MOD": 25,
+					"STRESS MOD": 50
+				},
+				{
+					"name": "Vigorous",
+					"STUN MOD": 25,
+					"MOVE MOD": 25,
+					"BLIGHT MOD": 25,
+					"BLEED MOD": 25,
+					"DISEASE MOD": 25,
+					"DEBUFF MOD": 25,
+					"SPEED MOD": 5,
+					"DODGE MOD": 10
+				},
+				{
+					"name": "Focused",
+					"STUN MOD": 25,
+					"MOVE MOD": 25,
+					"BLIGHT MOD": 25,
+					"BLEED MOD": 25,
+					"DISEASE MOD": 25,
+					"DEBUFF MOD": 25,
+					"ACC MOD": 10,
+					"CRIT MOD": 10
+				}
+			]
+		}
+	]
+}
