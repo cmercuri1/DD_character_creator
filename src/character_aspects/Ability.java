@@ -1,3 +1,4 @@
+package character_aspects;
 /* Ability class for handling individual aspects of character's abilities,
  *  such as Resistances, Critical Chance, Accuracy, etc */
 public class Ability {

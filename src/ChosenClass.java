@@ -6,6 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+import character_aspects.Ability;
+import character_aspects.AbilityMulti;
+import character_aspects.Stress;
+import setup.Armor;
+import setup.PlayerClass;
+import setup.Weapon;
+
 /* ChosenClass Class for managing all the aspects of a character */
 public class ChosenClass {
 	private String charName;

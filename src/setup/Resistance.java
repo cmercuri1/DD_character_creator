@@ -1,3 +1,4 @@
+package setup;
 
 public class Resistance {
 	private String name;

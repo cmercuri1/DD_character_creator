@@ -1,3 +1,4 @@
+package character_aspects;
 /* Ability class for handling individual aspects of character's abilities,
  *  such as Damage, and HP, which are affected by percentage increases */
 public class AbilityMulti extends Ability {

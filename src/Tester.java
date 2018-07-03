@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import setup.PlayerClass;
+
 public class Tester {
 	private ArrayList<PlayerClass> classes;
 	private ChosenClass choice;

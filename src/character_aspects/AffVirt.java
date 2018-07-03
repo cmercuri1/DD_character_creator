@@ -1,3 +1,4 @@
+package character_aspects;
 /* AffVirt Class for holding information about Afflictions and Virtues */
 public class AffVirt {
 	private String name;

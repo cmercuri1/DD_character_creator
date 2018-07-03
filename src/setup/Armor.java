@@ -1,3 +1,4 @@
+package setup;
 /* Armor class for holding information about armors */
 public class Armor {
 
