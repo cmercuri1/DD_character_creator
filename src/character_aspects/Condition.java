@@ -2,7 +2,9 @@ package character_aspects;
 
 public abstract class Condition {
 	protected String name;
-	
+	protected Enum<?> type;
+	protected int duration;
+
 	protected float stunMod;
 	protected float moveMod;
 	protected float blightMod;
@@ -11,7 +13,7 @@ public abstract class Condition {
 	protected float debuffMod;
 	protected float deathMod;
 	protected float trapMod;
-	
+
 	protected float hpMod;
 	protected float dodgeMod;
 	protected float damMod;
@@ -20,10 +22,13 @@ public abstract class Condition {
 	protected float critMod;
 	protected float protMod;
 	protected float stressMod;
-	
-	public Condition(String name, float sn, float mv, float bt, float bd, float ds, float df, float db,
-			float tp, float hp, float dg, float da, float sp, float ac, float cr, float pt, float st) {
+
+	public Condition(String name, Enum<?> type, int dur, float sn, float mv, float bt, float bd, float ds, float df,
+			float db, float tp, float hp, float dg, float da, float sp, float ac, float cr, float pt, float st) {
 		this.name = name;
+		this.type = type;
+		this.duration = dur;
+
 		this.stunMod = sn;
 		this.moveMod = mv;
 		this.blightMod = bt;
@@ -32,7 +37,7 @@ public abstract class Condition {
 		this.debuffMod = df;
 		this.deathMod = db;
 		this.trapMod = tp;
-		
+
 		this.hpMod = hp;
 		this.dodgeMod = dg;
 		this.damMod = da;
@@ -42,9 +47,21 @@ public abstract class Condition {
 		this.protMod = pt;
 		this.stressMod = st;
 	}
-	
+
+	public void trigger() {
+		this.duration--;
+	}
+
 	public String getName() {
 		return name;
+	}
+
+	public Enum<?> getType() {
+		return type;
+	}
+
+	public int getDuration() {
+		return duration;
 	}
 
 	public float getStunMod() {

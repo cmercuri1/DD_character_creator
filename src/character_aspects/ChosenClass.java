@@ -354,6 +354,7 @@ public class ChosenClass {
 	}
 
 	private void displayStats() {
+		System.out.println("STATS:");
 		for (int i = 0; i < this.statistics.size() / 2; i++) {
 			statistics.get(i).display();
 			System.out.print("   ");
@@ -364,7 +365,7 @@ public class ChosenClass {
 			System.out.print("   ");
 		}
 		System.out.println();
-
+		System.out.println("RESTISTANCES:");
 		for (int i = 0; i < this.resistances.size() / 2; i++) {
 			resistances.get(i).display();
 			System.out.print("   ");

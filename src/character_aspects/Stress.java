@@ -78,8 +78,8 @@ public class Stress {
 			float pt = getFloatValue(aff, "PROT MOD");
 			float st = getFloatValue(aff, "STRESS MOD");
 
-			this.afflictions
-					.add(new AffVirt(name, "aff", sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr, pt, st));
+			this.afflictions.add(
+					new AffVirt(name, AffVirtType.AFF, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr, pt, st));
 		}
 	}
 
@@ -109,8 +109,8 @@ public class Stress {
 			float pt = getFloatValue(virt, "PROT MOD");
 			float st = getFloatValue(virt, "STRESS MOD");
 
-			this.virtues
-					.add(new AffVirt(name, "virt", sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr, pt, st));
+			this.virtues.add(new AffVirt(name, AffVirtType.VIRT, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr,
+					pt, st));
 		}
 	}
 
@@ -148,7 +148,7 @@ public class Stress {
 	private void heartAttack() {
 		if (this.totalStress >= stressThreshold2) {
 			this.totalStress = stressThreshold2;
-			if (this.current.getType().equals("aff")) {
+			if (this.current.getType() == AffVirtType.AFF) {
 				this.stressHeal(40);
 			} else {
 				this.totalStress = 0;
@@ -162,7 +162,7 @@ public class Stress {
 
 		if (this.totalStress <= 0) {
 			this.totalStress = 0;
-			if (this.current != null && this.current.getType().equals("aff")) {
+			if (this.current != null && this.current.getType() == AffVirtType.AFF) {
 				this.removeAffVirt();
 			}
 		}
@@ -181,7 +181,7 @@ public class Stress {
 		System.out.println("Current Stress: " + this.totalStress + "/" + stressThreshold2);
 		if (!(this.current == null)) {
 			System.out.print("Current ");
-			if (this.current.getType().equals("virt")) {
+			if (this.current.getType() == AffVirtType.VIRT) {
 				System.out.println("Virtue: " + this.current.getName());
 			} else {
 				System.out.println("Affliction: " + this.current.getName());
