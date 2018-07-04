@@ -1,7 +1,0 @@
-0,Seeker
-1,Apprentice
-2,Adventurer
-3,Veteran
-4,Master
-5,Champion
-6,Legend

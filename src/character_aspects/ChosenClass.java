@@ -1,12 +1,11 @@
 package character_aspects;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.FileReader;
 import java.util.ArrayList;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import setup.Armor;
 import setup.PlayerClass;
@@ -60,30 +59,30 @@ public class ChosenClass {
 	}
 
 	private void checkXP(String difficulty) {
-		Charset charset = Charset.forName("US-ASCII");
 		if (!difficulty.equals("Radiant") && !difficulty.equals("Darkest")) {
 			System.out.println("Incorrect difficulty type");
 			System.exit(0);
 		}
-		Path file = FileSystems.getDefault().getPath("", difficulty + "XP.txt");
-
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
-
+		JSONParser parser = new JSONParser();
+		
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("XPData.json"));
+			
+			JSONObject difficultyData = (JSONObject) jsonObject.get("Difficulty");
+			JSONArray currDiff = (JSONArray) difficultyData.get(difficulty);
+			
 			int lvl = 0;
-
-			while ((line = reader.readLine()) != null) {
-				linebreak = line.split(",");
-				if ((this.xp - Integer.parseInt(linebreak[1])) >= 0) {
-					lvl = Integer.parseInt(linebreak[0]);
+			for(Object o:currDiff){
+				int xpReq = ((Long) ((JSONObject) o).get("xp required")).intValue();
+				if ((this.xp - xpReq) >= 0) {
+					lvl = ((Long) ((JSONObject) o).get("Level")).intValue();
 				} else {
-					this.changeLevel(lvl);
 					break;
 				}
 			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+			this.changeLevel(lvl);
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
@@ -112,23 +111,21 @@ public class ChosenClass {
 	}
 
 	private void getTitle() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file = FileSystems.getDefault().getPath("", "TitleData.txt");
-
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
-
-			while ((line = reader.readLine()) != null) {
-
-				linebreak = line.split(",");
-				if (this.level == Integer.parseInt(linebreak[0])) {
-					this.title = linebreak[1];
+		JSONParser parser = new JSONParser();
+		
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("TitleData.json"));
+			JSONArray titles = (JSONArray) jsonObject.get("Titles");
+			
+			for(Object o:titles){
+				int lvl = ((Long) ((JSONObject) o).get("Level")).intValue();
+				if (this.level == lvl) {
+					this.title = (String) ((JSONObject) o).get("Title");
 					break;
 				}
 			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 

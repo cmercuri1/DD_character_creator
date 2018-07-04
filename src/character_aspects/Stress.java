@@ -37,7 +37,6 @@ public class Stress {
 			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("Affliction&VirtueData.json"));
 
 			JSONArray afflictionData;
-			System.out.println(playClass);
 			if (playClass.equals("Flagellant")) {
 				afflictionData = (JSONArray) ((JSONObject) jsonObject.get("Afflictions")).get("Flagellant");
 			} else {
