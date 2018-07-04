@@ -28,8 +28,6 @@ public class PlayerClass {
 
 		JSONParser parser = new JSONParser();
 
-		this.classArmors = new ClassArmors();
-
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("EquipmentData.json"));
 
@@ -93,7 +91,7 @@ public class PlayerClass {
 			for (Object o : classWeapons) {
 				JSONObject ca = (JSONObject) o;
 
-				this.classWeapons.addWeapon((String) ca.get("WeaponName"), ((Long) ca.get("Level")).intValue(),
+				this.classWeapons.addWeapon((String) ca.get("Name"), ((Long) ca.get("Level")).intValue(),
 						((Long) ca.get("MinDamage")).floatValue(), ((Long) ca.get("MaxDamage")).floatValue(),
 						((Long) ca.get("Crit")).floatValue(), ((Long) ca.get("Speed")).floatValue());
 
