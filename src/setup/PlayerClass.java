@@ -1,11 +1,16 @@
 package setup;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class PlayerClass {
 	private String name;
@@ -23,29 +28,30 @@ public class PlayerClass {
 	private String isReligious;
 	private String provisions;
 
-	public PlayerClass(String name, int stun, int move, int blight, int bleed, int disease, int debuff, int death,
-			int trap, int fmove, int bmove, String critbuff, String isreligious, String provisions) {
-		this.name = name;
-
-		this.resistances.add(new Resistance("Stun", stun));
-		this.resistances.add(new Resistance("Move", move));
-		this.resistances.add(new Resistance("Blight", blight));
-		this.resistances.add(new Resistance("Bleed", bleed));
-		this.resistances.add(new Resistance("Disease", disease));
-		this.resistances.add(new Resistance("Debuff", debuff));
-		this.resistances.add(new Resistance("Death Blow", death));
-		this.resistances.add(new Resistance("Trap", trap));
-
-		this.trapDisarm = trap + 40;
-
-		this.fMove = fmove;
-		this.bMove = bmove;
-		this.critBuff = critbuff;
-		this.isReligious = isreligious;
-		this.provisions = provisions;
-
+	public PlayerClass(JSONObject o) {
+		this.getStats(o);
 		this.getArmors();
 		this.getWeapons();
+	}
+
+	private void getStats(JSONObject o) {
+		this.name = (String) o.get("name");
+		this.resistances.add(new Resistance("Stun", ((Long) o.get("StunResist")).intValue()));
+		this.resistances.add(new Resistance("Move", ((Long) o.get("MoveResist")).intValue()));
+		this.resistances.add(new Resistance("Blight", ((Long) o.get("BlightResist")).intValue()));
+		this.resistances.add(new Resistance("Bleed", ((Long) o.get("BleedResist")).intValue()));
+		this.resistances.add(new Resistance("Disease", ((Long) o.get("DiseaseResist")).intValue()));
+		this.resistances.add(new Resistance("Debuff", ((Long) o.get("DebuffResist")).intValue()));
+		this.resistances.add(new Resistance("Death Blow", ((Long) o.get("DeathBlowResist")).intValue()));
+		this.resistances.add(new Resistance("Trap", ((Long) o.get("TrapResist")).intValue()));
+
+		this.trapDisarm = ((Long) o.get("TrapDisarm")).intValue();
+
+		this.fMove = ((Long) o.get("ForwardMove")).intValue();
+		this.bMove = ((Long) o.get("BackwardMove")).intValue();
+		this.critBuff = (String) o.get("CritBuff");
+		this.isReligious = (String) o.get("Religious");
+		this.provisions = (String) o.get("Provisions");
 	}
 
 	private void getArmors() {
@@ -77,6 +83,22 @@ public class PlayerClass {
 			}
 		} catch (IOException x) {
 			System.err.format("IOException: %s%n", x);
+		}
+	}
+	
+	private void stuff() {
+		JSONParser parser = new JSONParser();
+		
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("ClassData.json"));
+			
+			JSONArray classData = (JSONArray) jsonObject.get("Class Data");
+			
+			for(Object o:classData){
+				
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 

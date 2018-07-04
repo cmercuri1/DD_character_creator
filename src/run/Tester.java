@@ -1,12 +1,12 @@
 package run;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import character_aspects.ChosenClass;
 import setup.PlayerClass;
@@ -25,58 +25,25 @@ public class Tester {
 	}
 
 	private void open() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file = FileSystems.getDefault().getPath("", "ClassData.txt");
-
 		this.classes = new ArrayList<PlayerClass>();
-
-		String cn;
-		int sn;
-		int mv;
-		int bt;
-		int bd;
-		int ds;
-		int df;
-		int db;
-		int tp;
-		int fm;
-		int bm;
-		String cb;
-		String ir;
-		String pr;
-
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
-
-			while ((line = reader.readLine()) != null) {
-
-				linebreak = line.split(",");
-				cn = linebreak[0];
-				sn = Integer.parseInt(linebreak[1]);
-				mv = Integer.parseInt(linebreak[2]);
-				bt = Integer.parseInt(linebreak[3]);
-				bd = Integer.parseInt(linebreak[4]);
-				ds = Integer.parseInt(linebreak[5]);
-				df = Integer.parseInt(linebreak[6]);
-				db = Integer.parseInt(linebreak[7]);
-				tp = Integer.parseInt(linebreak[8]);
-				fm = Integer.parseInt(linebreak[9]);
-				bm = Integer.parseInt(linebreak[10]);
-				cb = linebreak[11];
-				ir = linebreak[12];
-				pr = linebreak[13];
-
-				classes.add(new PlayerClass(cn, sn, mv, bt, bd, ds, df, db, tp, fm, bm, cb, ir, pr));
+		JSONParser parser = new JSONParser();
+		
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("ClassData.json"));
+			
+			JSONArray classData = (JSONArray) jsonObject.get("Class Data");
+			
+			for(Object o:classData){
+				this.classes.add(new PlayerClass((JSONObject) o));
 			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
 	private void choices() {
 		System.out.println("Welcome to Darkest Dungeon Character Creator/Runner");
-		
+
 		this.choice = new ChosenClass();
 		Scanner in = new Scanner(System.in);
 
@@ -226,12 +193,12 @@ public class Tester {
 
 			try {
 				int val = Integer.parseInt(s);
-				if(val >= 0) {
+				if (val >= 0) {
 					this.choice.getStress().addStress(val);
 				} else {
 					this.choice.getStress().stressHeal(-val);
 				}
-				
+
 				this.choice.display();
 			} catch (NumberFormatException ex) {
 
