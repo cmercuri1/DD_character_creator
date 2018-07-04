@@ -1,4 +1,5 @@
 package character_aspects;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -25,7 +26,7 @@ public class ChosenClass {
 	private Weapon chosenWeapon;
 
 	private Stress stress;
-	
+
 	private ArrayList<Ability> resistances;
 	private ArrayList<Ability> statistics;
 
@@ -38,9 +39,9 @@ public class ChosenClass {
 	}
 
 	public void assignClass(PlayerClass pclass) {
-		this.stress = new Stress(this);
 		this.chosen = pclass;
-		
+		this.stress = new Stress(this);
+
 		this.alterAbility("res", "STUN", this.chosen.getResistances().get(0).getValue());
 		this.alterAbility("res", "MOVE", this.chosen.getResistances().get(1).getValue());
 		this.alterAbility("res", "BLEED", this.chosen.getResistances().get(2).getValue());
@@ -49,7 +50,7 @@ public class ChosenClass {
 		this.alterAbility("res", "DEBUFF", this.chosen.getResistances().get(5).getValue());
 		this.alterAbility("res", "DEATH BLOW", this.chosen.getResistances().get(6).getValue());
 		this.alterAbility("res", "TRAP", this.chosen.getResistances().get(7).getValue());
-		
+
 		this.alterAbility("stat", "TRAP DISARM", this.chosen.getTrapDisarm());
 	}
 
@@ -98,15 +99,15 @@ public class ChosenClass {
 	}
 
 	private void applyLevel() {
-		float improvement = this.level*10;
-		
+		float improvement = this.level * 10;
+
 		this.alterAbility("res", "STUN", this.chosen.getResistances().get(0).getValue() + improvement);
 		this.alterAbility("res", "MOVE", this.chosen.getResistances().get(1).getValue() + improvement);
 		this.alterAbility("res", "BLEED", this.chosen.getResistances().get(2).getValue() + improvement);
 		this.alterAbility("res", "BLIGHT", this.chosen.getResistances().get(3).getValue() + improvement);
 		this.alterAbility("res", "DEBUFF", this.chosen.getResistances().get(5).getValue() + improvement);
 		this.alterAbility("res", "TRAP", this.chosen.getResistances().get(7).getValue() + improvement);
-		
+
 		this.alterAbility("stat", "TRAP DISARM", this.chosen.getTrapDisarm() + improvement);
 	}
 
@@ -179,49 +180,49 @@ public class ChosenClass {
 		this.alterAbility("stat", "CRIT", this.chosenWeapon.getCrit());
 		this.alterAbility("stat", "SPEED", this.chosenWeapon.getSpeed());
 	}
-	
+
 	private void setUpArrays() {
-		this.resistances.add(new Ability("STUN",0,0,200));
-		this.resistances.add(new Ability("MOVE",0,0,200));
-		this.resistances.add(new Ability("BLIGHT",0,0,200));
-		this.resistances.add(new Ability("BLEED",0,0,200));
-		this.resistances.add(new Ability("DISEASE",0,0,200));
-		this.resistances.add(new Ability("DEBUFF",0,0,200));
-		this.resistances.add(new Ability("DEATH BLOW",0,0,87));
-		this.resistances.add(new Ability("TRAP",0,0,200));
-		
-		this.statistics.add(new Ability("DODGE",0,0,150));
-		this.statistics.add(new AbilityMulti("MAX HP",0,0,1000));
-		this.statistics.add(new AbilityMulti("CURR HP",0,0,1000));
-		this.statistics.add(new AbilityMulti("MIN DAM",0,0,200));
-		this.statistics.add(new AbilityMulti("MAX DAM",0,0,200));
-		this.statistics.add(new Ability("CRIT",0,0,100));
-		this.statistics.add(new Ability("SPEED",0,0,50));
-		this.statistics.add(new Ability("TRAP DISARM",0,0,135));
-		this.statistics.add(new Ability("STRESS RESIST",100,0,200));
-		this.statistics.add(new Ability("VIRTUE CHANCE",25,1,95));
-		this.statistics.add(new Ability("ACCURACY",0,0,200));
-		this.statistics.add(new Ability("PROTECTION",0,0,80));
+		this.resistances.add(new Ability("STUN", 0, 0, 200));
+		this.resistances.add(new Ability("MOVE", 0, 0, 200));
+		this.resistances.add(new Ability("BLIGHT", 0, 0, 200));
+		this.resistances.add(new Ability("BLEED", 0, 0, 200));
+		this.resistances.add(new Ability("DISEASE", 0, 0, 200));
+		this.resistances.add(new Ability("DEBUFF", 0, 0, 200));
+		this.resistances.add(new Ability("DEATH BLOW", 0, 0, 87));
+		this.resistances.add(new Ability("TRAP", 0, 0, 200));
+
+		this.statistics.add(new Ability("DODGE", 0, 0, 150));
+		this.statistics.add(new AbilityMulti("MAX HP", 0, 0, 1000));
+		this.statistics.add(new AbilityMulti("CURR HP", 0, 0, 1000));
+		this.statistics.add(new AbilityMulti("MIN DAM", 0, 0, 200));
+		this.statistics.add(new AbilityMulti("MAX DAM", 0, 0, 200));
+		this.statistics.add(new Ability("CRIT", 0, 0, 100));
+		this.statistics.add(new Ability("SPEED", 0, 0, 50));
+		this.statistics.add(new Ability("TRAP DISARM", 0, 0, 135));
+		this.statistics.add(new Ability("STRESS RESIST", 100, 0, 200));
+		this.statistics.add(new Ability("VIRTUE CHANCE", 25, 1, 95));
+		this.statistics.add(new Ability("ACCURACY", 0, 0, 200));
+		this.statistics.add(new Ability("PROTECTION", 0, 0, 80));
 	}
-	
+
 	private void alterAbility(String array, String cat, float val) {
 		if (array.equals("res")) {
-			for(Ability res: this.resistances) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.resistances) {
+				if (res.getName().equals(cat)) {
 					res.setBaseValue(val);
 				}
 			}
 		} else if (array.equals("stat")) {
-			for(Ability res: this.statistics) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.statistics) {
+				if (res.getName().equals(cat)) {
 					res.setBaseValue(val);
 				}
 			}
 		}
 	}
-	
-	public void alterStatistics(float dam, float crit, float speed, float dodge, float hp, float acc,
-			float prot, float stress) {
+
+	public void alterStatistics(float dam, float crit, float speed, float dodge, float hp, float acc, float prot,
+			float stress) {
 		this.alterAbilityMod("stat", "MIN DAM", dam);
 		this.alterAbilityMod("stat", "MAX DAM", dam);
 		this.alterAbilityMod("stat", "CRIT", crit);
@@ -233,9 +234,9 @@ public class ChosenClass {
 		this.alterAbilityMod("stat", "PROTECTION", prot);
 		this.alterAbilityMod("stat", "STRESS RESIST", stress);
 	}
-	
-	public void alterResistances(float stun, float move, float blight, float bleed,
-			float disease, float debuff, float death, float trap) {
+
+	public void alterResistances(float stun, float move, float blight, float bleed, float disease, float debuff,
+			float death, float trap) {
 		this.alterAbilityMod("res", "STUN", stun);
 		this.alterAbilityMod("res", "MOVE", move);
 		this.alterAbilityMod("res", "BLIGHT", blight);
@@ -244,36 +245,36 @@ public class ChosenClass {
 		this.alterAbilityMod("res", "DEBUFF", debuff);
 		this.alterAbilityMod("res", "DEATH BlOW", death);
 		this.alterAbilityMod("res", "TRAP", trap);
-		
+
 		this.alterAbilityMod("stat", "TRAP DISARM", trap);
 	}
-	
+
 	private void alterAbilityMod(String array, String cat, float val) {
 		if (array.equals("res")) {
-			for(Ability res: this.resistances) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.resistances) {
+				if (res.getName().equals(cat)) {
 					res.setModifier(val);
 				}
 			}
 		} else if (array.equals("stat")) {
-			for(Ability res: this.statistics) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.statistics) {
+				if (res.getName().equals(cat)) {
 					res.setModifier(val);
 				}
 			}
 		}
 	}
-	
+
 	public float getAbility(String array, String cat) {
 		if (array.equals("res")) {
-			for(Ability res: this.resistances) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.resistances) {
+				if (res.getName().equals(cat)) {
 					return res.getFinal();
 				}
 			}
 		} else if (array.equals("stat")) {
-			for(Ability res: this.statistics) {
-				if(res.getName().equals(cat)) {
+			for (Ability res : this.statistics) {
+				if (res.getName().equals(cat)) {
 					return res.getFinal();
 				}
 			}
@@ -312,7 +313,7 @@ public class ChosenClass {
 			System.out.print("   ");
 		}
 		System.out.println();
-		
+
 		for (int i = 0; i < this.resistances.size() / 2; i++) {
 			resistances.get(i).display();
 			System.out.print("   ");

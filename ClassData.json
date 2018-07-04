@@ -1,6 +1,7 @@
 {
 	"Class Data": [
-		{	"name":"Abomination",
+		{
+			"name": "Abomination",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 60,
@@ -15,8 +16,9 @@
 			"CritBuff": "+20% DMG",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-			"name":"Antiquarian",
+		},
+		{
+			"name": "Antiquarian",
 			"StunResist": 20,
 			"MoveResist": 20,
 			"BlightResist": 20,
@@ -31,8 +33,9 @@
 			"CritBuff": "+10 Dodge",
 			"Religious": "No",
 			"Provisions": "Skeleton Key"
-		},{
-		"name":"Arbalest",
+		},
+		{
+			"name": "Arbalest",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 30,
@@ -47,8 +50,9 @@
 			"CritBuff": "+33% DMG vs Marked",
 			"Religious": "No",
 			"Provisions": "Bandage"
-		},{
-		"name":"Bounty Hunter",
+		},
+		{
+			"name": "Bounty Hunter",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 30,
@@ -63,8 +67,9 @@
 			"CritBuff": "+33% DMG vs Marked",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-"name":		"Crusader",
+		},
+		{
+			"name": "Crusader",
 			"StunResist": 40,
 			"MoveResist": 30,
 			"BlightResist": 30,
@@ -79,8 +84,9 @@
 			"CritBuff": "+15% PROT",
 			"Religious": "Yes",
 			"Provisions": "Holy Water"
-		},{
-		"name":"Flagellant",
+		},
+		{
+			"name": "Flagellant",
 			"StunResist": 50,
 			"MoveResist": 50,
 			"BlightResist": 30,
@@ -95,8 +101,9 @@
 			"CritBuff": "+20% Bleed Skill Chance",
 			"Religious": "Yes",
 			"Provisions": "None"
-		},{
-		"name":"Grave Robber",
+		},
+		{
+			"name": "Grave Robber",
 			"StunResist": 20,
 			"MoveResist": 20,
 			"BlightResist": 50,
@@ -111,8 +118,9 @@
 			"CritBuff": "+10 DODGE",
 			"Religious": "No",
 			"Provisions": "Shovel"
-		},{
-		"name":"Hellion",
+		},
+		{
+			"name": "Hellion",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 40,
@@ -127,8 +135,9 @@
 			"CritBuff": "+33% DMG vs Bleeding",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-		"name":"Highwayman",
+		},
+		{
+			"name": "Highwayman",
 			"StunResist": 30,
 			"MoveResist": 30,
 			"BlightResist": 30,
@@ -143,8 +152,9 @@
 			"CritBuff": "+2 SPD",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-		"name":"Houndmaster",
+		},
+		{
+			"name": "Houndmaster",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 40,
@@ -159,8 +169,9 @@
 			"CritBuff": "+20% Bleed Skill chance",
 			"Religious": "No",
 			"Provisions": "2 Dog Treats"
-		},{
-		"name":"Jester",
+		},
+		{
+			"name": "Jester",
 			"StunResist": 20,
 			"MoveResist": 20,
 			"BlightResist": 40,
@@ -175,8 +186,9 @@
 			"CritBuff": "+40% Stress Healing done",
 			"Religious": "No",
 			"Provisions": "Medicinal Herbs"
-		},{
-		"name":"Leper",
+		},
+		{
+			"name": "Leper",
 			"StunResist": 60,
 			"MoveResist": 60,
 			"BlightResist": 40,
@@ -191,8 +203,9 @@
 			"CritBuff": "+10 ACC",
 			"Religious": "Yes",
 			"Provisions": "Medicinal Herbs"
-		},{
-		"name":"Man-at-Arms",
+		},
+		{
+			"name": "Man-at-Arms",
 			"StunResist": 40,
 			"MoveResist": 40,
 			"BlightResist": 30,
@@ -207,8 +220,9 @@
 			"CritBuff": "-33% Stress",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-		"name":"Occultist",
+		},
+		{
+			"name": "Occultist",
 			"StunResist": 20,
 			"MoveResist": 20,
 			"BlightResist": 30,
@@ -223,8 +237,9 @@
 			"CritBuff": "+25% Healing done",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-		"name":"Plague Doctor",
+		},
+		{
+			"name": "Plague Doctor",
 			"StunResist": 20,
 			"MoveResist": 20,
 			"BlightResist": 60,
@@ -239,8 +254,9 @@
 			"CritBuff": "+20% Blight chance",
 			"Religious": "No",
 			"Provisions": "Antivenom"
-		},{
-		"name":"Shieldbreaker",
+		},
+		{
+			"name": "Shieldbreaker",
 			"StunResist": 50,
 			"MoveResist": 50,
 			"BlightResist": 20,
@@ -255,8 +271,9 @@
 			"CritBuff": "+15% PROT",
 			"Religious": "No",
 			"Provisions": "None"
-		},{
-		"name":"Vestal",
+		},
+		{
+			"name": "Vestal",
 			"StunResist": 30,
 			"MoveResist": 30,
 			"BlightResist": 30,

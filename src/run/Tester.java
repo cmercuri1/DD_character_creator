@@ -78,7 +78,7 @@ public class Tester {
 	private void chooseClass(Scanner in) {
 		boolean canConfirm = false;
 
-		System.out.println("Enter an Class number from 1-17, 'q' to quit.");
+		System.out.println("Enter an Class number from 1-17, enter 'q' at any time to quit.");
 		String s;
 		while (true) {
 			s = in.next();
@@ -100,7 +100,7 @@ public class Tester {
 				} else if (s.equals("yes") && canConfirm == true) {
 					break;
 				} else {
-					System.out.print("Please enter a valid number, or 'q' to quit");
+					System.out.print("Please enter a valid number");
 					if (canConfirm == true) {
 						System.out.println(", or 'yes' to confirm");
 					} else {
@@ -112,19 +112,17 @@ public class Tester {
 	}
 
 	private void chooseName(Scanner in) {
-		System.out.println("Enter a name for your character, 'q' to quit");
+		System.out.println("Enter a name for your character (q will not quit here)");
 		String s;
 		s = in.next();
-		if (s.equals("q")) {
-			exitProgram();
-		} else {
-			choice.setCharName(s);
-		}
+		
+		choice.setCharName(s);
+		
 	}
 
 	private void chooseXP(Scanner in) {
 		String s;
-		System.out.println("Enter a starting XP greater than 0, 'q' to quit.");
+		System.out.println("Enter a starting XP greater than 0");
 		while (true) {
 			s = in.next();
 			try {
@@ -139,7 +137,7 @@ public class Tester {
 				if (s.equals("q")) {
 					exitProgram();
 				} else {
-					System.out.println("Please enter a valid number, or 'q' to quit");
+					System.out.println("Please enter a valid number");
 				}
 			}
 		}
@@ -149,9 +147,9 @@ public class Tester {
 		boolean canConfirm = false;
 
 		if (this.choice.getItemLevel() > 1) {
-			System.out.println("Enter an Item level number from 1-" + this.choice.getItemLevel() + ", 'q' to quit.");
+			System.out.println("Enter an Item level number from 1-" + this.choice.getItemLevel());
 		} else {
-			System.out.println("Enter an Item level number equal to 1, 'q' to quit.");
+			System.out.println("Enter an Item level number equal to 1");
 		}
 
 		String s;
@@ -174,7 +172,7 @@ public class Tester {
 				} else if (s.equals("yes") && canConfirm == true) {
 					break;
 				} else {
-					System.out.print("Please enter a valid number, or 'q' to quit");
+					System.out.print("Please enter a valid number");
 					if (canConfirm == true) {
 						System.out.println(", or 'yes' to confirm");
 					} else {
@@ -201,15 +199,19 @@ public class Tester {
 
 				this.choice.display();
 			} catch (NumberFormatException ex) {
-
+				if (s.equals("q")) {
+					exitProgram();
+				}
 			}
 
 			System.out.println("Are you done testing?");
 			System.out.println("Please enter 'yes' or 'no'");
 			while (true) {
 				s = in.next();
-
-				if (!s.equals("yes") && !s.equals("no")) {
+				
+				if (s.equals("q")) {
+					exitProgram();
+				} else if (!s.equals("yes") && !s.equals("no")) {
 					System.out.println("Please enter 'yes' or 'no'");
 				} else {
 					break;

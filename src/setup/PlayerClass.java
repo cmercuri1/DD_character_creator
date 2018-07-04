@@ -44,6 +44,7 @@ public class PlayerClass {
 
 	private void getStats(JSONObject o) {
 		this.name = (String) o.get("name");
+		
 		this.resistances.add(new Resistance("Stun", ((Long) o.get("StunResist")).intValue()));
 		this.resistances.add(new Resistance("Move", ((Long) o.get("MoveResist")).intValue()));
 		this.resistances.add(new Resistance("Blight", ((Long) o.get("BlightResist")).intValue()));
