@@ -1,11 +1,6 @@
 package setup;
-import java.io.BufferedReader;
+
 import java.io.FileReader;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
@@ -30,8 +25,23 @@ public class PlayerClass {
 
 	public PlayerClass(JSONObject o) {
 		this.getStats(o);
-		this.getArmors();
-		this.getWeapons();
+
+		JSONParser parser = new JSONParser();
+
+		this.classArmors = new ClassArmors();
+
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("EquipmentData.json"));
+
+			JSONObject armorData = (JSONObject) jsonObject.get("Armor Data");
+			JSONObject weaponData = (JSONObject) jsonObject.get("Weapon Data");
+
+			this.getArmors(armorData);
+			this.getWeapons(weaponData);
+		} catch (Exception ex) {
+
+		}
+
 	}
 
 	private void getStats(JSONObject o) {
@@ -54,87 +64,41 @@ public class PlayerClass {
 		this.provisions = (String) o.get("Provisions");
 	}
 
-	private void getArmors() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file = FileSystems.getDefault().getPath("", "ArmorData.txt");
-
+	private void getArmors(JSONObject armorData) {
 		this.classArmors = new ClassArmors();
 
-		String nm;
-		int lvl;
-		float hp;
-		float ddg;
-
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
-
-			while ((line = reader.readLine()) != null) {
-
-				linebreak = line.split(",");
-				if (linebreak[0].equals(name)) {
-					nm = linebreak[1];
-					lvl = Integer.parseInt(linebreak[2]);
-					hp = Float.parseFloat(linebreak[3]);
-					ddg = Float.parseFloat(linebreak[4]);
-
-					this.classArmors.addArmor(nm, lvl, hp, ddg);
-				}
-			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
-		}
-	}
-	
-	private void stuff() {
-		JSONParser parser = new JSONParser();
-		
 		try {
-			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("ClassData.json"));
-			
-			JSONArray classData = (JSONArray) jsonObject.get("Class Data");
-			
-			for(Object o:classData){
-				
+			JSONArray classArmors = (JSONArray) armorData.get(this.name);
+
+			for (Object o : classArmors) {
+				JSONObject ca = (JSONObject) o;
+				try {
+					this.classArmors.addArmor((String) ca.get("ArmorName"), ((Long) ca.get("Level")).intValue(),
+							((Long) ca.get("HP")).floatValue(), ((Double) ca.get("DODGE")).floatValue());
+				} catch (ClassCastException e) {
+					this.classArmors.addArmor((String) ca.get("ArmorName"), ((Long) ca.get("Level")).intValue(),
+							((Long) ca.get("HP")).floatValue(), ((Long) ca.get("DODGE")).floatValue());
+				}
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
 		}
 	}
 
-	private void getWeapons() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file = FileSystems.getDefault().getPath("", "WeaponData.txt");
-
+	private void getWeapons(JSONObject weaponData) {
 		this.classWeapons = new ClassWeapons();
 
-		String nm;
-		int lvl;
-		float min;
-		float max;
-		float crt;
-		float spd;
+		try {
+			JSONArray classWeapons = (JSONArray) weaponData.get(this.name);
 
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
+			for (Object o : classWeapons) {
+				JSONObject ca = (JSONObject) o;
 
-			while ((line = reader.readLine()) != null) {
+				this.classWeapons.addWeapon((String) ca.get("WeaponName"), ((Long) ca.get("Level")).intValue(),
+						((Long) ca.get("MinDamage")).floatValue(), ((Long) ca.get("MaxDamage")).floatValue(),
+						((Long) ca.get("Crit")).floatValue(), ((Long) ca.get("Speed")).floatValue());
 
-				linebreak = line.split(",");
-				if (linebreak[0].equals(name)) {
-					nm = linebreak[1];
-					lvl = Integer.parseInt(linebreak[2]);
-					min = Float.parseFloat(linebreak[3]);
-					max = Float.parseFloat(linebreak[4]);
-					crt = Float.parseFloat(linebreak[5]);
-					spd = Float.parseFloat(linebreak[6]);
-
-					this.classWeapons.addWeapon(nm, lvl, min, max, crt, spd);
-				}
 			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+		} catch (Exception ex) {
 		}
 	}
 
