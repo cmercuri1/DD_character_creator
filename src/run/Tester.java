@@ -27,13 +27,13 @@ public class Tester {
 	private void open() {
 		this.classes = new ArrayList<PlayerClass>();
 		JSONParser parser = new JSONParser();
-		
+
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("ClassData.json"));
-			
+
 			JSONArray classData = (JSONArray) jsonObject.get("Class Data");
-			
-			for(Object o:classData){
+
+			for (Object o : classData) {
 				this.classes.add(new PlayerClass((JSONObject) o));
 			}
 		} catch (Exception ex) {
@@ -115,9 +115,9 @@ public class Tester {
 		System.out.println("Enter a name for your character (q will not quit here)");
 		String s;
 		s = in.next();
-		
+
 		choice.setCharName(s);
-		
+
 	}
 
 	private void chooseXP(Scanner in) {
@@ -208,7 +208,7 @@ public class Tester {
 			System.out.println("Please enter 'yes' or 'no'");
 			while (true) {
 				s = in.next();
-				
+
 				if (s.equals("q")) {
 					exitProgram();
 				} else if (!s.equals("yes") && !s.equals("no")) {

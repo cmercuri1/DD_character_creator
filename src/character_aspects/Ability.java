@@ -1,4 +1,5 @@
 package character_aspects;
+
 /* Ability class for handling individual aspects of character's abilities,
  *  such as Resistances, Critical Chance, Accuracy, etc */
 public class Ability {
@@ -6,7 +7,7 @@ public class Ability {
 	private float baseValue;
 	private float modifier;
 	private final int BASE = 0;
-	
+
 	private float lowCap;
 	private float highCap;
 
@@ -17,16 +18,16 @@ public class Ability {
 		this.lowCap = lcap;
 		this.highCap = hcap;
 	}
-	
+
 	public int getFinal() {
 		float test = baseValue + modifier;
-		
-		if(test < this.lowCap) {
+
+		if (test < this.lowCap) {
 			test = this.lowCap;
 		} else if (test > this.highCap) {
 			test = this.highCap;
 		}
-		
+
 		return ((int) Math.ceil(test / 1.00));
 	}
 
@@ -45,7 +46,7 @@ public class Ability {
 	public void setModifier(float modifier) {
 		this.modifier = modifier;
 	}
-	
+
 	public void resetModifier() {
 		this.modifier = BASE;
 	}
@@ -61,7 +62,7 @@ public class Ability {
 	public float getHighCap() {
 		return highCap;
 	}
-	
+
 	public void display() {
 		System.out.print(this.name + ": " + this.getFinal());
 	}

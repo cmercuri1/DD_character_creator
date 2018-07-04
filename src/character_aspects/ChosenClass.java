@@ -66,15 +66,15 @@ public class ChosenClass {
 			System.exit(0);
 		}
 		JSONParser parser = new JSONParser();
-		
+
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("XPData.json"));
-			
+
 			JSONObject difficultyData = (JSONObject) jsonObject.get("Difficulty");
 			JSONArray currDiff = (JSONArray) difficultyData.get(difficulty);
-			
+
 			int lvl = 0;
-			for(Object o:currDiff){
+			for (Object o : currDiff) {
 				int xpReq = ((Long) ((JSONObject) o).get("xp required")).intValue();
 				if ((this.xp - xpReq) >= 0) {
 					lvl = ((Long) ((JSONObject) o).get("Level")).intValue();
@@ -114,12 +114,12 @@ public class ChosenClass {
 
 	private void getTitle() {
 		JSONParser parser = new JSONParser();
-		
+
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("TitleData.json"));
 			JSONArray titles = (JSONArray) jsonObject.get("Titles");
-			
-			for(Object o:titles){
+
+			for (Object o : titles) {
 				int lvl = ((Long) ((JSONObject) o).get("Level")).intValue();
 				if (this.level == lvl) {
 					this.title = (String) ((JSONObject) o).get("Title");
@@ -280,12 +280,12 @@ public class ChosenClass {
 		}
 		return -1;
 	}
-	
+
 	public void addCondition(Condition con) {
 		this.conditions.add(con);
 		this.updateModifiers();
 	}
-	
+
 	public void removeCondition(Condition con) {
 		this.conditions.remove(con);
 		this.updateModifiers();
@@ -300,7 +300,7 @@ public class ChosenClass {
 		float debuffMod = 0;
 		float deathMod = 0;
 		float trapMod = 0;
-		
+
 		float hpMod = 0;
 		float dodgeMod = 0;
 		float damMod = 0;
@@ -309,8 +309,8 @@ public class ChosenClass {
 		float critMod = 0;
 		float protMod = 0;
 		float stressMod = 0;
-		
-		for(int i = 0; i < this.conditions.size(); i++) {
+
+		for (int i = 0; i < this.conditions.size(); i++) {
 			stunmod += this.conditions.get(i).getStunMod();
 			moveMod += this.conditions.get(i).getMoveMod();
 			blightMod += this.conditions.get(i).getBlightMod();
@@ -319,7 +319,7 @@ public class ChosenClass {
 			debuffMod += this.conditions.get(i).getDebuffMod();
 			deathMod += this.conditions.get(i).getDeathMod();
 			trapMod += this.conditions.get(i).getTrapMod();
-			
+
 			hpMod += this.conditions.get(i).getHpMod();
 			dodgeMod += this.conditions.get(i).getDodgeMod();
 			damMod += this.conditions.get(i).getDamMod();
@@ -331,6 +331,28 @@ public class ChosenClass {
 		}
 		this.alterResistances(stunmod, moveMod, blightMod, bleedMod, diseaseMod, debuffMod, deathMod, trapMod);
 		this.alterStatistics(damMod, critMod, speedMod, dodgeMod, hpMod, accMod, protMod, stressMod);
+	}
+
+	private void triggerConditions() {
+		Condition cur;
+		ArrayList<Integer> remove = new ArrayList<Integer>();
+		for (int i = 0; i < this.conditions.size(); i++) {
+			cur = this.conditions.get(i);
+			cur.trigger();
+			if (cur.getDuration() == 0) {
+				remove.add(i);
+			}
+		}
+		if (remove.size() > 0) {
+			this.removeConditions(remove);
+		}
+	}
+
+	private void removeConditions(ArrayList<Integer> remove) {
+		for (int i = (remove.size() - 1); i == 0; i--) {
+			this.conditions.remove(remove.get(i));
+		}
+
 	}
 
 	public void display() {
