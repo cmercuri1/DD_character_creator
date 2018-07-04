@@ -1,13 +1,14 @@
 package character_aspects;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+/* Stress Class for handling character's stress as well as choosing and implementing any afflictions/virtues */
 public class Stress {
 	private int totalStress;
 
@@ -26,104 +27,103 @@ public class Stress {
 		this.current = null;
 		this.chosenClass = cclass;
 
-		this.setUpAffsVirts(cclass.getClass().getName());
+		this.setUpAffsVirts(cclass.getChosen().getName());
 	}
 
 	private void setUpAffsVirts(String playClass) {
-		this.setUpAfflictions(playClass);
-		this.setUpVirtues();
+		JSONParser parser = new JSONParser();
+
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("Affliction&VirtueData.json"));
+
+			JSONArray afflictionData;
+			if (playClass.equals("Flagellant")) {
+				afflictionData = (JSONArray) ((JSONObject) jsonObject.get("Afflictions")).get("Flagellant");
+			} else {
+				afflictionData = (JSONArray) ((JSONObject) jsonObject.get("Afflictions")).get("Others");
+			}
+			JSONArray virtueData = (JSONArray) ((JSONObject) jsonObject.get("Virtues")).get("All");
+
+			this.setUpAfflictions(afflictionData);
+			this.setUpVirtues(virtueData);
+		} catch (Exception ex) {
+
+		}
+
 	}
 
-	private void setUpAfflictions(String playClass) {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file;
-
+	private void setUpAfflictions(JSONArray afflictionData) {
 		this.afflictions = new ArrayList<AffVirt>();
 
-		if (playClass.equals("Flagellant")) {
-			file = FileSystems.getDefault().getPath("", "FlagellantAfflictions.txt");
-		} else {
-			file = FileSystems.getDefault().getPath("", "Afflictions.txt");
-		}
+		for (Object o : afflictionData) {
+			JSONObject aff = (JSONObject) o;
 
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
+			String name = (String) aff.get("name");
 
-			while ((line = reader.readLine()) != null) {
-				linebreak = line.split(",");
-				String name = linebreak[0];
-				String type = linebreak[1];
-				float sn = Float.parseFloat(linebreak[2]);
-				float mv = Float.parseFloat(linebreak[3]);
-				float bt = Float.parseFloat(linebreak[4]);
-				float bd = Float.parseFloat(linebreak[5]);
-				float ds = Float.parseFloat(linebreak[6]);
-				float df = Float.parseFloat(linebreak[7]);
-				float db = Float.parseFloat(linebreak[8]);
-				float tp = Float.parseFloat(linebreak[9]);
-				
-				float hp = Float.parseFloat(linebreak[10]);
-				float dg = Float.parseFloat(linebreak[11]);
-				float da = Float.parseFloat(linebreak[12]);
-				float sp = Float.parseFloat(linebreak[13]);
-				float ac = Float.parseFloat(linebreak[14]);
-				float cr = Float.parseFloat(linebreak[15]);
-				float pt = Float.parseFloat(linebreak[16]);
-				float st = Float.parseFloat(linebreak[17]);
+			float sn = getFloatValue(aff, "STUN MOD");
+			float mv = getFloatValue(aff, "MOVE MOD");
+			float bt = getFloatValue(aff, "BLIGHT MOD");
+			float bd = getFloatValue(aff, "BLEED MOD");
+			float ds = getFloatValue(aff, "DISEASE MOD");
+			float df = getFloatValue(aff, "DEBUFF MOD");
+			float db = getFloatValue(aff, "DEATH BLOW MOD");
+			float tp = getFloatValue(aff, "TRAP MOD");
 
-				this.afflictions.add(new AffVirt(name, type, sn, mv, bt, bd, ds, df, db, tp,
-						hp, dg, da, sp, ac, cr, pt, st));
-			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+			float hp = getFloatValue(aff, "HP MOD");
+			float dg = getFloatValue(aff, "DODGE MOD");
+			float da = getFloatValue(aff, "DAMAGE MOD");
+			float sp = getFloatValue(aff, "SPEED MOD");
+			float ac = getFloatValue(aff, "ACC MOD");
+			float cr = getFloatValue(aff, "CRIT MOD");
+			float pt = getFloatValue(aff, "PROT MOD");
+			float st = getFloatValue(aff, "STRESS MOD");
+
+			this.afflictions.add(
+					new AffVirt(name, AffVirtType.AFF, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr, pt, st));
 		}
 	}
 
-	private void setUpVirtues() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file;
-
+	private void setUpVirtues(JSONArray virtueData) {
 		this.virtues = new ArrayList<AffVirt>();
 
-		file = FileSystems.getDefault().getPath("", "Virtues.txt");
+		for (Object o : virtueData) {
+			JSONObject virt = (JSONObject) o;
 
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
+			String name = (String) virt.get("name");
 
-			while ((line = reader.readLine()) != null) {
-				linebreak = line.split(",");
-				String name = linebreak[0];
-				String type = linebreak[1];
-				float sn = Float.parseFloat(linebreak[2]);
-				float mv = Float.parseFloat(linebreak[3]);
-				float bt = Float.parseFloat(linebreak[4]);
-				float bd = Float.parseFloat(linebreak[5]);
-				float ds = Float.parseFloat(linebreak[6]);
-				float df = Float.parseFloat(linebreak[7]);
-				float db = Float.parseFloat(linebreak[8]);
-				float tp = Float.parseFloat(linebreak[9]);
-				
-				float hp = Float.parseFloat(linebreak[10]);
-				float dg = Float.parseFloat(linebreak[11]);
-				float da = Float.parseFloat(linebreak[12]);
-				float sp = Float.parseFloat(linebreak[13]);
-				float ac = Float.parseFloat(linebreak[14]);
-				float cr = Float.parseFloat(linebreak[15]);
-				float pt = Float.parseFloat(linebreak[16]);
-				float st = Float.parseFloat(linebreak[17]);
+			float sn = getFloatValue(virt, "STUN MOD");
+			float mv = getFloatValue(virt, "MOVE MOD");
+			float bt = getFloatValue(virt, "BLIGHT MOD");
+			float bd = getFloatValue(virt, "BLEED MOD");
+			float ds = getFloatValue(virt, "DISEASE MOD");
+			float df = getFloatValue(virt, "DEBUFF MOD");
+			float db = getFloatValue(virt, "DEATH BLOW MOD");
+			float tp = getFloatValue(virt, "TRAP MOD");
 
-				this.virtues.add(new AffVirt(name, type, sn, mv, bt, bd, ds, df, db, tp,
-						hp, dg, da, sp, ac, cr, pt, st));
-			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+			float hp = getFloatValue(virt, "HP MOD");
+			float dg = getFloatValue(virt, "DODGE MOD");
+			float da = getFloatValue(virt, "DAMAGE MOD");
+			float sp = getFloatValue(virt, "SPEED MOD");
+			float ac = getFloatValue(virt, "ACC MOD");
+			float cr = getFloatValue(virt, "CRIT MOD");
+			float pt = getFloatValue(virt, "PROT MOD");
+			float st = getFloatValue(virt, "STRESS MOD");
+
+			this.virtues.add(new AffVirt(name, AffVirtType.VIRT, sn, mv, bt, bd, ds, df, db, tp, hp, dg, da, sp, ac, cr,
+					pt, st));
+		}
+	}
+
+	public float getFloatValue(JSONObject o, String key) {
+		if (o.get(key) != null) {
+			return (((Long) o.get(key)).floatValue());
+		} else {
+			return 0;
 		}
 	}
 
 	public void addStress(int val) {
-		this.totalStress += val*(200 - this.chosenClass.getAbility("stat", "STRESS RESIST"))/100;
+		this.totalStress += val * (200 - this.chosenClass.getAbility("stat", "STRESS RESIST")) / 100;
 
 		this.stressCheck();
 		this.heartAttack();
@@ -148,11 +148,11 @@ public class Stress {
 	private void heartAttack() {
 		if (this.totalStress >= stressThreshold2) {
 			this.totalStress = stressThreshold2;
-			if (this.current.getType().equals("aff")) {
+			if (this.current.getType() == AffVirtType.AFF) {
 				this.stressHeal(40);
 			} else {
 				this.totalStress = 0;
-				this.removeVirtue();
+				this.removeAffVirt();
 			}
 		}
 	}
@@ -162,35 +162,18 @@ public class Stress {
 
 		if (this.totalStress <= 0) {
 			this.totalStress = 0;
-			if (this.current != null && this.current.getType().equals("aff")) {
-				this.removeAffliction();
+			if (this.current != null && this.current.getType() == AffVirtType.AFF) {
+				this.removeAffVirt();
 			}
 		}
 	}
 
 	private void applyAffVirt() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(c.getStunmod(), c.getMoveMod(), c.getBlightMod(), c.getBleedMod(),
-				c.getDiseaseMod(), c.getDebuffMod(), c.getDeathMod(), c.getTrapMod());
-		this.chosenClass.alterStatistics(c.getDamMod(), c.getCritMod(), c.getSpeedMod(), c.getDodgeMod(),
-				c.getHpMod(), c.getAccMod(), c.getProtMod(), c.getStressMod());
+		this.chosenClass.addCondition(current);
 	}
 
-	private void removeVirtue() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
-				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
-		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
-				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
-		this.current = null;
-	}
-
-	private void removeAffliction() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
-				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
-		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
-				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
+	private void removeAffVirt() {
+		this.chosenClass.removeCondition(current);
 		this.current = null;
 	}
 
@@ -198,7 +181,7 @@ public class Stress {
 		System.out.println("Current Stress: " + this.totalStress + "/" + stressThreshold2);
 		if (!(this.current == null)) {
 			System.out.print("Current ");
-			if (this.current.getType().equals("virt")) {
+			if (this.current.getType() == AffVirtType.VIRT) {
 				System.out.println("Virtue: " + this.current.getName());
 			} else {
 				System.out.println("Affliction: " + this.current.getName());

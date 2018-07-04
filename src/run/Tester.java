@@ -1,12 +1,12 @@
 package run;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import character_aspects.ChosenClass;
 import setup.PlayerClass;
@@ -25,58 +25,25 @@ public class Tester {
 	}
 
 	private void open() {
-		Charset charset = Charset.forName("US-ASCII");
-		Path file = FileSystems.getDefault().getPath("", "ClassData.txt");
-
 		this.classes = new ArrayList<PlayerClass>();
+		JSONParser parser = new JSONParser();
 
-		String cn;
-		int sn;
-		int mv;
-		int bt;
-		int bd;
-		int ds;
-		int df;
-		int db;
-		int tp;
-		int fm;
-		int bm;
-		String cb;
-		String ir;
-		String pr;
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("ClassData.json"));
 
-		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-			String line = null;
-			String linebreak[];
+			JSONArray classData = (JSONArray) jsonObject.get("Class Data");
 
-			while ((line = reader.readLine()) != null) {
-
-				linebreak = line.split(",");
-				cn = linebreak[0];
-				sn = Integer.parseInt(linebreak[1]);
-				mv = Integer.parseInt(linebreak[2]);
-				bt = Integer.parseInt(linebreak[3]);
-				bd = Integer.parseInt(linebreak[4]);
-				ds = Integer.parseInt(linebreak[5]);
-				df = Integer.parseInt(linebreak[6]);
-				db = Integer.parseInt(linebreak[7]);
-				tp = Integer.parseInt(linebreak[8]);
-				fm = Integer.parseInt(linebreak[9]);
-				bm = Integer.parseInt(linebreak[10]);
-				cb = linebreak[11];
-				ir = linebreak[12];
-				pr = linebreak[13];
-
-				classes.add(new PlayerClass(cn, sn, mv, bt, bd, ds, df, db, tp, fm, bm, cb, ir, pr));
+			for (Object o : classData) {
+				this.classes.add(new PlayerClass((JSONObject) o));
 			}
-		} catch (IOException x) {
-			System.err.format("IOException: %s%n", x);
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
 	private void choices() {
 		System.out.println("Welcome to Darkest Dungeon Character Creator/Runner");
-		
+
 		this.choice = new ChosenClass();
 		Scanner in = new Scanner(System.in);
 
@@ -111,7 +78,7 @@ public class Tester {
 	private void chooseClass(Scanner in) {
 		boolean canConfirm = false;
 
-		System.out.println("Enter an Class number from 1-17, 'q' to quit.");
+		System.out.println("Enter an Class number from 1-17, enter 'q' at any time to quit.");
 		String s;
 		while (true) {
 			s = in.next();
@@ -133,7 +100,7 @@ public class Tester {
 				} else if (s.equals("yes") && canConfirm == true) {
 					break;
 				} else {
-					System.out.print("Please enter a valid number, or 'q' to quit");
+					System.out.print("Please enter a valid number");
 					if (canConfirm == true) {
 						System.out.println(", or 'yes' to confirm");
 					} else {
@@ -145,19 +112,17 @@ public class Tester {
 	}
 
 	private void chooseName(Scanner in) {
-		System.out.println("Enter a name for your character, 'q' to quit");
+		System.out.println("Enter a name for your character (q will not quit here)");
 		String s;
 		s = in.next();
-		if (s.equals("q")) {
-			exitProgram();
-		} else {
-			choice.setCharName(s);
-		}
+
+		choice.setCharName(s);
+
 	}
 
 	private void chooseXP(Scanner in) {
 		String s;
-		System.out.println("Enter a starting XP greater than 0, 'q' to quit.");
+		System.out.println("Enter a starting XP greater than 0");
 		while (true) {
 			s = in.next();
 			try {
@@ -172,7 +137,7 @@ public class Tester {
 				if (s.equals("q")) {
 					exitProgram();
 				} else {
-					System.out.println("Please enter a valid number, or 'q' to quit");
+					System.out.println("Please enter a valid number");
 				}
 			}
 		}
@@ -182,9 +147,9 @@ public class Tester {
 		boolean canConfirm = false;
 
 		if (this.choice.getItemLevel() > 1) {
-			System.out.println("Enter an Item level number from 1-" + this.choice.getItemLevel() + ", 'q' to quit.");
+			System.out.println("Enter an Item level number from 1-" + this.choice.getItemLevel());
 		} else {
-			System.out.println("Enter an Item level number equal to 1, 'q' to quit.");
+			System.out.println("Enter an Item level number equal to 1");
 		}
 
 		String s;
@@ -207,7 +172,7 @@ public class Tester {
 				} else if (s.equals("yes") && canConfirm == true) {
 					break;
 				} else {
-					System.out.print("Please enter a valid number, or 'q' to quit");
+					System.out.print("Please enter a valid number");
 					if (canConfirm == true) {
 						System.out.println(", or 'yes' to confirm");
 					} else {
@@ -226,15 +191,17 @@ public class Tester {
 
 			try {
 				int val = Integer.parseInt(s);
-				if(val >= 0) {
+				if (val >= 0) {
 					this.choice.getStress().addStress(val);
 				} else {
 					this.choice.getStress().stressHeal(-val);
 				}
-				
+
 				this.choice.display();
 			} catch (NumberFormatException ex) {
-
+				if (s.equals("q")) {
+					exitProgram();
+				}
 			}
 
 			System.out.println("Are you done testing?");
@@ -242,7 +209,9 @@ public class Tester {
 			while (true) {
 				s = in.next();
 
-				if (!s.equals("yes") && !s.equals("no")) {
+				if (s.equals("q")) {
+					exitProgram();
+				} else if (!s.equals("yes") && !s.equals("no")) {
 					System.out.println("Please enter 'yes' or 'no'");
 				} else {
 					break;

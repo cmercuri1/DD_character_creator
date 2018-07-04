@@ -1,4 +1,5 @@
 package character_aspects;
+
 /* Ability class for handling individual aspects of character's abilities,
  *  such as Damage, and HP, which are affected by percentage increases */
 public class AbilityMulti extends Ability {
@@ -6,15 +7,15 @@ public class AbilityMulti extends Ability {
 		super(name, val, lcap, hcap);
 	}
 
-	public float getFinal() {
+	public int getFinal() {
 		float test = this.getBaseValue() * (100 + this.getModifier()) / 100;
-		
-		if(test < this.getLowCap()) {
+
+		if (test < this.getLowCap()) {
 			test = this.getLowCap();
 		} else if (test > this.getHighCap()) {
 			test = this.getHighCap();
 		}
-		
-		return test;
+
+		return ((int) Math.ceil(test / 1.00));
 	}
 }

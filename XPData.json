@@ -1,0 +1,64 @@
+{
+	"Difficulty": {
+		"Radiant": [
+			{
+				"Level": 0,
+				"xp required": 0
+			},
+			{
+				"Level": 1,
+				"xp required": 2
+			},
+			{
+				"Level": 2,
+				"xp required": 7
+			},
+			{
+				"Level": 3,
+				"xp required": 13
+			},
+			{
+				"Level": 4,
+				"xp required": 21
+			},
+			{
+				"Level": 5,
+				"xp required": 29
+			},
+			{
+				"Level": 6,
+				"xp required": 40
+			}
+		],
+		"Darkest": [
+			{
+				"Level": 0,
+				"xp required": 0
+			},
+			{
+				"Level": 1,
+				"xp required": 2
+			},
+			{
+				"Level": 2,
+				"xp required": 8
+			},
+			{
+				"Level": 3,
+				"xp required": 14
+			},
+			{
+				"Level": 4,
+				"xp required": 24
+			},
+			{
+				"Level": 5,
+				"xp required": 36
+			},
+			{
+				"Level": 6,
+				"xp required": 48
+			}
+		]
+	}
+}
