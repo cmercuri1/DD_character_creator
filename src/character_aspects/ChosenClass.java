@@ -28,10 +28,12 @@ public class ChosenClass {
 
 	private ArrayList<Ability> resistances;
 	private ArrayList<Ability> statistics;
+	private ArrayList<Condition> conditions;
 
 	public ChosenClass() {
 		this.resistances = new ArrayList<Ability>();
 		this.statistics = new ArrayList<Ability>();
+		this.conditions = new ArrayList<Condition>();
 		this.xp = 0;
 		this.level = 0;
 		this.setUpArrays();
@@ -102,8 +104,8 @@ public class ChosenClass {
 
 		this.alterAbility("res", "STUN", this.chosen.getResistances().get(0).getValue() + improvement);
 		this.alterAbility("res", "MOVE", this.chosen.getResistances().get(1).getValue() + improvement);
-		this.alterAbility("res", "BLEED", this.chosen.getResistances().get(2).getValue() + improvement);
-		this.alterAbility("res", "BLIGHT", this.chosen.getResistances().get(3).getValue() + improvement);
+		this.alterAbility("res", "BLIGHT", this.chosen.getResistances().get(2).getValue() + improvement);
+		this.alterAbility("res", "BLEED", this.chosen.getResistances().get(3).getValue() + improvement);
 		this.alterAbility("res", "DEBUFF", this.chosen.getResistances().get(5).getValue() + improvement);
 		this.alterAbility("res", "TRAP", this.chosen.getResistances().get(7).getValue() + improvement);
 
@@ -218,7 +220,7 @@ public class ChosenClass {
 		}
 	}
 
-	public void alterStatistics(float dam, float crit, float speed, float dodge, float hp, float acc, float prot,
+	private void alterStatistics(float dam, float crit, float speed, float dodge, float hp, float acc, float prot,
 			float stress) {
 		this.alterAbilityMod("stat", "MIN DAM", dam);
 		this.alterAbilityMod("stat", "MAX DAM", dam);
@@ -232,7 +234,7 @@ public class ChosenClass {
 		this.alterAbilityMod("stat", "STRESS RESIST", stress);
 	}
 
-	public void alterResistances(float stun, float move, float blight, float bleed, float disease, float debuff,
+	private void alterResistances(float stun, float move, float blight, float bleed, float disease, float debuff,
 			float death, float trap) {
 		this.alterAbilityMod("res", "STUN", stun);
 		this.alterAbilityMod("res", "MOVE", move);
@@ -277,6 +279,58 @@ public class ChosenClass {
 			}
 		}
 		return -1;
+	}
+	
+	public void addCondition(Condition con) {
+		this.conditions.add(con);
+		this.updateModifiers();
+	}
+	
+	public void removeCondition(Condition con) {
+		this.conditions.remove(con);
+		this.updateModifiers();
+	}
+
+	private void updateModifiers() {
+		float stunmod = 0;
+		float moveMod = 0;
+		float blightMod = 0;
+		float bleedMod = 0;
+		float diseaseMod = 0;
+		float debuffMod = 0;
+		float deathMod = 0;
+		float trapMod = 0;
+		
+		float hpMod = 0;
+		float dodgeMod = 0;
+		float damMod = 0;
+		float speedMod = 0;
+		float accMod = 0;
+		float critMod = 0;
+		float protMod = 0;
+		float stressMod = 0;
+		
+		for(int i = 0; i < this.conditions.size(); i++) {
+			stunmod += this.conditions.get(i).getStunMod();
+			moveMod += this.conditions.get(i).getMoveMod();
+			blightMod += this.conditions.get(i).getBlightMod();
+			bleedMod += this.conditions.get(i).getBleedMod();
+			diseaseMod += this.conditions.get(i).getDiseaseMod();
+			debuffMod += this.conditions.get(i).getDebuffMod();
+			deathMod += this.conditions.get(i).getDeathMod();
+			trapMod += this.conditions.get(i).getTrapMod();
+			
+			hpMod += this.conditions.get(i).getHpMod();
+			dodgeMod += this.conditions.get(i).getDodgeMod();
+			damMod += this.conditions.get(i).getDamMod();
+			speedMod += this.conditions.get(i).getSpeedMod();
+			accMod += this.conditions.get(i).getAccMod();
+			critMod += this.conditions.get(i).getCritMod();
+			protMod += this.conditions.get(i).getProtMod();
+			stressMod += this.conditions.get(i).getStressMod();
+		}
+		this.alterResistances(stunmod, moveMod, blightMod, bleedMod, diseaseMod, debuffMod, deathMod, trapMod);
+		this.alterStatistics(damMod, critMod, speedMod, dodgeMod, hpMod, accMod, protMod, stressMod);
 	}
 
 	public void display() {

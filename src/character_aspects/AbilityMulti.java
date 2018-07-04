@@ -6,7 +6,7 @@ public class AbilityMulti extends Ability {
 		super(name, val, lcap, hcap);
 	}
 
-	public float getFinal() {
+	public int getFinal() {
 		float test = this.getBaseValue() * (100 + this.getModifier()) / 100;
 		
 		if(test < this.getLowCap()) {
@@ -15,6 +15,6 @@ public class AbilityMulti extends Ability {
 			test = this.getHighCap();
 		}
 		
-		return test;
+		return ((int) Math.ceil(test / 1.00));
 	}
 }

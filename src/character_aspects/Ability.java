@@ -18,7 +18,7 @@ public class Ability {
 		this.highCap = hcap;
 	}
 	
-	public float getFinal() {
+	public int getFinal() {
 		float test = baseValue + modifier;
 		
 		if(test < this.lowCap) {
@@ -27,7 +27,7 @@ public class Ability {
 			test = this.highCap;
 		}
 		
-		return test;
+		return ((int) Math.ceil(test / 1.00));
 	}
 
 	public float getBaseValue() {
@@ -43,7 +43,7 @@ public class Ability {
 	}
 
 	public void setModifier(float modifier) {
-		this.modifier += modifier;
+		this.modifier = modifier;
 	}
 	
 	public void resetModifier() {

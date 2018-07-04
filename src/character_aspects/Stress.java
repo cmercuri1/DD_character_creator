@@ -152,7 +152,7 @@ public class Stress {
 				this.stressHeal(40);
 			} else {
 				this.totalStress = 0;
-				this.removeVirtue();
+				this.removeAffVirt();
 			}
 		}
 	}
@@ -163,34 +163,17 @@ public class Stress {
 		if (this.totalStress <= 0) {
 			this.totalStress = 0;
 			if (this.current != null && this.current.getType().equals("aff")) {
-				this.removeAffliction();
+				this.removeAffVirt();
 			}
 		}
 	}
 
 	private void applyAffVirt() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(c.getStunmod(), c.getMoveMod(), c.getBlightMod(), c.getBleedMod(),
-				c.getDiseaseMod(), c.getDebuffMod(), c.getDeathMod(), c.getTrapMod());
-		this.chosenClass.alterStatistics(c.getDamMod(), c.getCritMod(), c.getSpeedMod(), c.getDodgeMod(), c.getHpMod(),
-				c.getAccMod(), c.getProtMod(), c.getStressMod());
+		this.chosenClass.addCondition(current);
 	}
 
-	private void removeVirtue() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
-				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
-		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
-				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
-		this.current = null;
-	}
-
-	private void removeAffliction() {
-		AffVirt c = this.current;
-		this.chosenClass.alterResistances(-c.getStunmod(), -c.getMoveMod(), -c.getBlightMod(), -c.getBleedMod(),
-				-c.getDiseaseMod(), -c.getDebuffMod(), -c.getDeathMod(), -c.getTrapMod());
-		this.chosenClass.alterStatistics(-c.getDamMod(), -c.getCritMod(), -c.getSpeedMod(), -c.getDodgeMod(),
-				-c.getHpMod(), -c.getAccMod(), -c.getProtMod(), -c.getStressMod());
+	private void removeAffVirt() {
+		this.chosenClass.removeCondition(current);
 		this.current = null;
 	}
 
